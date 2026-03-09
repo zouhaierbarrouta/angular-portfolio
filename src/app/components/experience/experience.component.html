@@ -1,0 +1,128 @@
+<section class="site-section" id="section-experience">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-5">
+                <div class="section-heading text-center">
+                    <h2><span data-i18n="experience.title">My Experience</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-5 align-items-stretch">
+            <div class="col-md-5 mb-4 mb-md-0 d-flex">
+                <div class="resume-item w-100 p-4 shadow-sm" style="border-radius: 8px; background-color: #333;">
+                    <span class="date d-block mb-2 text-primary"><span class="icon-calendar"></span> July 2023 – February 2026</span>
+                    <h3 data-i18n="experience.job1.title" class="mb-3 text-white">Full Stack JS Developer - IoT Platform</h3>
+                    <p data-i18n="experience.job1.description" class="text-light">Developed and maintained CORE Platform features including
+                        rebranding, internationalization, generic widgets & dashboards, gateway management, anomalies
+                        detection, and billing & subscription management. Built multiple Business Accelerators: Smart
+                        Parking, Smart Construction, Waste Management, Aircraft Solution, and Fleet Ops with delivery
+                        trips management.</p>
+                    <span class="school font-weight-bold text-white mt-3 d-block">Kian Technologies - Plateforme Retina</span>
+                </div>
+            </div>
+            
+            <div class="col-md-7 d-flex">
+                <div class="work-slider-container w-100" *ngIf="showcases['kian'].images.length > 0; else noKianImages">
+                    <div class="work-slider">
+                        <div class="slide" *ngFor="let image of showcases['kian'].images; let i = index"
+                            [class.active]="i === showcases['kian'].currentIndex">
+                            <img [src]="image.url" [alt]="image.title">
+                            <div class="slide-caption">
+                                <h3>{{ image.title }}</h3>
+                                <p>{{ image.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="slider-btn prev" (click)="prevSlide('kian')">
+                        <img src="assets/images/icons/arrow-prev-small-svgrepo-com.svg" width="28" height="28" alt="Previous">
+                    </button>
+                    <button class="slider-btn next" (click)="nextSlide('kian')">
+                        <img src="assets/images/icons/arrow-next-small-svgrepo-com.svg" width="28" height="28" alt="Next">
+                    </button>
+
+                    <div class="slider-dots">
+                        <span *ngFor="let dot of showcases['kian'].images; let i = index" 
+                            [class.active]="i === showcases['kian'].currentIndex"
+                            (click)="setSlide('kian', i)"></span>
+                    </div>
+                </div>
+                <ng-template #noKianImages>
+                    <div class="work-placeholder d-flex align-items-center justify-content-center shadow-sm w-100" style="min-height: 300px; border-radius: 8px; border: 2px dashed #555; background-color: #333;">
+                        <p class="text-light m-0"><i class="icon-image mr-2"></i>Screenshots coming soon</p>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+
+        <div class="row mb-5 align-items-stretch">
+            <div class="col-md-5 mb-4 mb-md-0 d-flex">
+                <div class="resume-item w-100 p-4 shadow-sm" style="border-radius: 8px; background-color: #333;">
+                    <span class="date d-block mb-2 text-primary"><span class="icon-calendar"></span> February 2021 – June 2023</span>
+                    <h3 data-i18n="experience.job2.title" class="mb-3 text-white">Front End Developer</h3>
+                    <p data-i18n="experience.job2.description" class="text-light">Integrated user interfaces with ADF (Alfresco) and
+                        Angular. Collaborated with designers, PO, and Scrum Master to analyze client needs. Worked on
+                        multiple projects including Digi Recouvrement/GED (banking debt recovery), Smart Claim
+                        (insurance claims), Poc Réclamation (banking complaints), and FTUSA (insurance request
+                        management).</p>
+                    <span class="school font-weight-bold text-white mt-3 d-block">ADDINN Tunisie</span>
+                </div>
+            </div>
+            
+            <div class="col-md-7 d-flex">
+                <div class="work-slider-container w-100" *ngIf="showcases['addinn'].images.length > 0; else noAddinnImages">
+                    <div class="work-slider">
+                        <div class="slide" *ngFor="let image of showcases['addinn'].images; let i = index"
+                            [class.active]="i === showcases['addinn'].currentIndex">
+                            <img [src]="image.url" [alt]="image.title">
+                            <div class="slide-caption">
+                                <h3>{{ image.title }}</h3>
+                                <p>{{ image.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="slider-btn prev" (click)="prevSlide('addinn')">
+                        <img src="assets/images/icons/arrow-prev-small-svgrepo-com.svg" width="28" height="28" alt="Previous">
+                    </button>
+                    <button class="slider-btn next" (click)="nextSlide('addinn')">
+                        <img src="assets/images/icons/arrow-next-small-svgrepo-com.svg" width="28" height="28" alt="Next">
+                    </button>
+
+                    <div class="slider-dots">
+                        <span *ngFor="let dot of showcases['addinn'].images; let i = index" 
+                            [class.active]="i === showcases['addinn'].currentIndex"
+                            (click)="setSlide('addinn', i)"></span>
+                    </div>
+                </div>
+                <ng-template #noAddinnImages>
+                    <div class="work-placeholder d-flex align-items-center justify-content-center shadow-sm w-100" style="min-height: 300px; border-radius: 8px; border: 2px dashed #555; background-color: #333;">
+                        <p class="text-light m-0"><i class="icon-image mr-2"></i>Screenshots coming soon</p>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2 class="mb-5 text-center" data-i18n="experience.certifications.title">Certifications</h2>
+                <div class="row">
+                    <div class="col-md-6 d-flex">
+                        <div class="resume-item mb-4 w-100 p-4 shadow-sm" style="background-color: #333; border-radius: 8px;">
+                            <h3 data-i18n="experience.certifications.cert1.name" class="text-white">HTML/CSS/JavaScript Certification</h3>
+                            <p data-i18n="experience.certifications.cert1.description" class="text-light">Certified in web development
+                                fundamentals including HTML, CSS, and JavaScript.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex">
+                        <div class="resume-item mb-4 w-100 p-4 shadow-sm" style="background-color: #333; border-radius: 8px;">
+                            <h3 data-i18n="experience.certifications.cert2.name" class="text-white">MPR Alcatel Certification</h3>
+                            <p data-i18n="experience.certifications.cert2.description" class="text-light">Alcatel Lucent Maroc
+                                certification in network and telecommunications technologies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> <!-- .section -->
