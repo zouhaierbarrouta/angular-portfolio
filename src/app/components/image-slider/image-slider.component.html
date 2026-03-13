@@ -1,0 +1,34 @@
+<div class="work-slider-container w-100 position-relative" *ngIf="images.length > 0; else noImages">
+  <div class="work-slider">
+    <div class="slide" *ngFor="let image of slideImages; let i = index" [class.active]="i === currentIndex">
+      <img [src]="image.url" [alt]="image.title">
+      <div class="slide-caption">
+        <h3>{{ image.title }}</h3>
+        <p>{{ image.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="slider-btn prev" (click)="prevSlide()" *ngIf="slideImages.length > 1">
+    <img src="assets/images/icons/arrow-prev-small-svgrepo-com.svg" width="28" height="28" alt="Previous">
+  </button>
+  <button class="slider-btn next" (click)="nextSlide()" *ngIf="slideImages.length > 1">
+    <img src="assets/images/icons/arrow-next-small-svgrepo-com.svg" width="28" height="28" alt="Next">
+  </button>
+
+  <div class="slider-dots-container" *ngIf="slideImages.length > 1">
+    <div class="slider-dots">
+      <span *ngFor="let dot of slideImages; let i = index" [class.active]="i === currentIndex" (click)="setSlide(i)"></span>
+    </div>
+    <div class="text-center mt-3 mb-2" *ngIf="images.length > maxScreensToShow">
+      <a href="#" (click)="toggleShowAll($event)" class="text-primary font-weight-bold p-2 bg-dark rounded d-inline-block shadow" style="text-decoration: none;">
+        {{ showAll ? 'Show less' : 'Details: Show all ' + images.length + ' screens' }}
+      </a>
+    </div>
+  </div>
+</div>
+<ng-template #noImages>
+  <div class="work-placeholder d-flex align-items-center justify-content-center shadow-sm w-100" style="min-height: 300px; border-radius: 8px; border: 2px dashed #555; background-color: #333;">
+    <p class="text-light m-0"><i class="icon-image mr-2"></i>Screenshots coming soon</p>
+  </div>
+</ng-template>
