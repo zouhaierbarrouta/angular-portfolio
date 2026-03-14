@@ -12,14 +12,19 @@
             <div class="col-md-5 mb-4 mb-md-0 d-flex">
                 <div class="resume-item w-100 p-4 shadow-sm" style="border-radius: 8px; background-color: #333;">
                     <span class="date d-block mb-2 text-primary"><span class="icon-calendar"></span> {{ project.date }}</span>
-                    <h3 class="mb-3 text-white">{{ project.title }}</h3>
-                    <p class="text-light">{{ project.description }}</p>
+                    <h3 class="mb-3 text-white" [attr.data-i18n]="'experience.projects.' + project.id + '.title'">{{ project.title }}</h3>
+                    <p class="text-light">
+                        <span [attr.data-i18n]="'experience.projects.' + project.id + '.description'">{{ project.description }}</span>
+                        <a [routerLink]="['/experience-details', project.id]" *ngIf="project.images && project.images.length > 5" class="text-primary ml-1" style="text-decoration: underline; cursor: pointer;" data-i18n="experience.moreDetails">
+                            more details
+                        </a>
+                    </p>
                     <span class="school font-weight-bold text-white mt-3 d-block">{{ project.company }}</span>
                 </div>
             </div>
             
             <div class="col-md-7 d-flex">
-                <app-image-slider class="w-100" [images]="project.images" [maxScreensToShow]="5"></app-image-slider>
+                <app-image-slider #slider class="w-100" [images]="project.images" [maxScreensToShow]="5"></app-image-slider>
             </div>
         </div>
 

@@ -1,0 +1,25 @@
+<section class="site-section">
+  <div class="container">
+      <div class="row mb-5">
+          <div class="col-12">
+              <a routerLink="/" class="btn btn-primary mb-4" data-i18n="experienceDetails.back">&larr; Back to Resume</a>
+              <h2 class="mb-3 text-white" *ngIf="project" [attr.data-i18n]="'experience.projects.' + project.id + '.title'">{{ project.title }}<span data-i18n="experienceDetails.allScreens"> - All Screens</span></h2>
+              <p class="text-light" *ngIf="project" [attr.data-i18n]="'experience.projects.' + project.id + '.description'">{{ project.description }}</p>
+          </div>
+      </div>
+
+      <div class="row" *ngIf="project">
+          <div class="col-md-6 col-lg-4 mb-4" *ngFor="let image of project.images">
+              <div class="card bg-dark text-white shadow-sm h-100" style="border: 1px solid #444; border-radius: 8px; overflow: hidden;">
+                  <img [src]="image.url" [alt]="image.title" class="card-img-top w-100 h-100" style="object-fit: cover; min-height: 250px;">
+              </div>
+          </div>
+      </div>
+      
+      <div class="row" *ngIf="!project">
+          <div class="col-12 text-center">
+              <h3 class="text-white" data-i18n="experienceDetails.notFound">Project not found</h3>
+          </div>
+      </div>
+  </div>
+</section>

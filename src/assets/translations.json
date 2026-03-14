@@ -9,11 +9,11 @@
     },
     "hero": {
       "greeting": "Hello, I'm",
-      "title": "Frontend Angular Developer"
+      "title": "Full Stack Developer"
     },
     "about": {
       "title": "About Me",
-      "lead": "Frontend Angular Developer with over 5 years of experience",
+      "lead": "Full Stack Developer with over 5 years of experience",
       "description": "Expert in creating high-performance, responsive, and maintainable web applications. Passionate about designing intuitive user interfaces and seamless user experiences, with deep mastery of the Angular RxJS ecosystem and development best practices. My goal is to transform complex requirements into elegant, scalable, and high-quality interfaces.",
       "hireMe": "Hire Me",
       "downloadCV": "Download CV"
@@ -54,7 +54,28 @@
           "name": "MPR Alcatel Certification",
           "description": "Alcatel Lucent Maroc certification in network and telecommunications technologies."
         }
+      },
+      "moreDetails": "More details",
+      "screenshotsComingSoon": "Screenshots coming soon",
+      "projects": {
+        "smart-construction": {
+          "title": "Smart Construction Suite",
+          "description": "IoT integration and management dashboards. Developed and maintained CORE Platform features including rebranding, internationalization, generic widgets & dashboards, gateway management, anomalies detection, and billing & subscription management."
+        },
+        "smart-claim": {
+          "title": "Smart Claim",
+          "description": "Insurance claims management application. Part of a collaborative effort with designers, PO, and Scrum Master. Core responsibilities included integrating user interfaces with ADF (Alfresco) and Angular."
+        },
+        "recouvrement": {
+          "title": "Digi Recouvrement (GED)",
+          "description": "Banking debt recovery management application. Collaborated on requirements analysis and technical implementation to ensure a smooth, professional banking interface."
+        }
       }
+    },
+    "experienceDetails": {
+      "back": "← Back to Resume",
+      "allScreens": " - All Screens",
+      "notFound": "Project not found"
     },
     "skills": {
       "title": "My Skills",
@@ -108,11 +129,11 @@
     },
     "hero": {
       "greeting": "Bonjour, je suis",
-      "title": "Développeur Frontend Angular"
+      "title": "Développeur Full Stack"
     },
     "about": {
       "title": "À propos de moi",
-      "lead": "Développeur Frontend Angular avec plus de 5 ans d'expérience",
+      "lead": "Développeur Full Stack avec plus de 5 ans d'expérience",
       "description": "Expert dans la création d'applications web performantes, réactives et maintenables. Passionné par la conception d'interfaces utilisateur intuitives et d'expériences fluides, avec une maîtrise approfondie de l'écosystème Angular RxJS et des bonnes pratiques de développement. Mon objectif est de transformer des exigences complexes en interfaces élégantes, scalables et de haute qualité.",
       "hireMe": "M'embaucher",
       "downloadCV": "Télécharger CV"
@@ -153,7 +174,28 @@
           "name": "Certification MPR Alcatel",
           "description": "Certification Alcatel Lucent Maroc en technologies réseau et télécommunications."
         }
+      },
+      "moreDetails": "Plus de détails",
+      "screenshotsComingSoon": "Captures d'écran à venir",
+      "projects": {
+        "smart-construction": {
+          "title": "Smart Construction Suite",
+          "description": "Intégration IoT et tableaux de bord de gestion. Développement et maintenance des fonctionnalités de la plateforme CORE incluant le rebranding, l'internationalisation, les widgets et tableaux de bord génériques, la gestion des passerelles, la détection d'anomalies et la gestion de la facturation et des abonnements."
+        },
+        "smart-claim": {
+          "title": "Smart Claim",
+          "description": "Application de gestion des sinistres d'assurance. Collaboration avec les designers, PO et Scrum Master. Responsabilités principales incluant l'intégration des interfaces utilisateur avec ADF (Alfresco) et Angular."
+        },
+        "recouvrement": {
+          "title": "Digi Recouvrement (GED)",
+          "description": "Application de gestion du recouvrement de créances bancaires. Collaboration à l'analyse des besoins et à la mise en œuvre technique pour assurer une interface bancaire fluide et professionnelle."
+        }
       }
+    },
+    "experienceDetails": {
+      "back": "← Retour au CV",
+      "allScreens": " - Tous les écrans",
+      "notFound": "Projet introuvable"
     },
     "skills": {
       "title": "Mes Compétences",

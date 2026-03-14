@@ -12,6 +12,8 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { ExperienceDetailsComponent } from './components/experience-details/experience-details.component';
+import { MainContentComponent } from './components/main-content/main-content.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ImageSliderComponent } from './components/image-slider/image-slider.com
     SkillsComponent,
     ContactComponent,
     FooterComponent,
-    ImageSliderComponent
+    ImageSliderComponent,
+    ExperienceDetailsComponent,
+    MainContentComponent
   ],
   imports: [
     BrowserModule,
