@@ -15,9 +15,57 @@ export const PROJECTS_DATA: ProjectShowcase[] = [
     title: 'Smart Construction Suite',
     company: 'Kian Technologies - Plateforme Retina',
     date: 'July 2023 – February 2026',
-    description: 'IoT integration and management dashboards. Developed and maintained CORE Platform features including rebranding, internationalization, generic widgets & dashboards, gateway management, anomalies detection, and billing & subscription management.',
+    description: 'Comprehensive IoT solution for Site Monitoring, Asset, Equipment & Machine Tracking, Vehicle Management, Worker Safety Monitoring, Energy Management, Access Control Management, and violation detection.',
     images: [
-      { url: 'assets/images/smart-construction/smart construction.png', title: 'Smart Construction Suite', description: 'IoT integration and dashboards' }
+      { url: 'assets/images/smart-construction/1.png', title: 'Smart Construction Suite - Overview', description: 'IoT integration and dashboards' },
+      { url: 'assets/images/smart-construction/2.jpg', title: 'Smart Construction Suite - Monitor', description: 'Real-time monitoring interface' },
+      { url: 'assets/images/smart-construction/3.jpg', title: 'Smart Construction Suite - Analytics', description: 'Data analytics and reporting' }
+    ]
+  },
+  {
+    id: 'fleet-ops',
+    title: 'Fleet Ops',
+    company: 'Kian Technologies - Plateforme Retina',
+    date: 'July 2023 – February 2026',
+    description: 'Comprehensive fleet management system with delivery trips management, real-time tracking, and resource optimization modules.',
+    images: Array.from({ length: 12 }, (_, i) => ({
+      url: `assets/images/fleet-ops/${i + 1}.png`,
+      title: `Fleet Ops - Screen ${i + 1}`,
+      description: 'Fleet management interface'
+    }))
+  },
+  {
+    id: 'smart-parking',
+    title: 'Smart Parking',
+    company: 'Kian Technologies - Plateforme Retina',
+    date: 'July 2023 – February 2026',
+    description: 'Intelligent parking management system using IoT sensors to track occupancy, manage reservations, and provide real-time parking availability.',
+    images: Array.from({ length: 8 }, (_, i) => ({
+      url: `assets/images/smart-parking/${i + 1}.png`,
+      title: `Smart Parking - Screen ${i + 1}`,
+      description: 'Parking management interface'
+    }))
+  },
+  {
+    id: 'waste-management',
+    title: 'Waste Management',
+    company: 'Kian Technologies - Plateforme Retina',
+    date: 'July 2023 – February 2026',
+    description: 'IoT-based waste management solution for optimizing collection routes, monitoring bin levels, and improving urban waste disposal efficiency.',
+    images: Array.from({ length: 5 }, (_, i) => ({
+      url: `assets/images/waste-management/${i + 1}.png`,
+      title: `Waste Management - Screen ${i + 1}`,
+      description: 'Waste management interface'
+    }))
+  },
+  {
+    id: 'air-craft',
+    title: 'Aircraft Solution',
+    company: 'Kian Technologies - Plateforme Retina',
+    date: 'July 2023 – February 2026',
+    description: 'Specialized solution for aircraft management and tracking, integrating IoT data for maintenance and operational monitoring.',
+    images: [
+      { url: 'assets/images/air-craft/1.jpg', title: 'Aircraft Solution', description: 'Aircraft tracking and maintenance interface' }
     ]
   },
   {
@@ -33,6 +81,16 @@ export const PROJECTS_DATA: ProjectShowcase[] = [
     }))
   },
   {
+    id: 'poc-reclamation',
+    title: 'Poc Réclamation',
+    company: 'ADDINN Tunisie',
+    date: 'February 2021 – June 2023',
+    description: 'POC for a banking complaints management system, designed to handle customer feedback and resolution workflows efficiently.',
+    images: [
+      { url: 'assets/images/poc-reclamation/1.png', title: 'Poc Réclamation', description: 'Banking complaints management interface' }
+    ]
+  },
+  {
     id: 'recouvrement',
     title: 'Digi Recouvrement (GED)',
     company: 'ADDINN Tunisie',
@@ -43,6 +101,16 @@ export const PROJECTS_DATA: ProjectShowcase[] = [
       title: `Recouvrement - Screen ${i + 1}`,
       description: 'Debt recovery management interface'
     }))
+  },
+  {
+    id: 'ftusa',
+    title: 'FTUSA',
+    company: 'ADDINN Tunisie',
+    date: 'February 2021 – June 2023',
+    description: 'Insurance request management platform for FTUSA, facilitating paperless workflows and automated processing of insurance claims.',
+    images: [
+      { url: 'assets/images/ftusa/1.png', title: 'FTUSA - Insurance Request', description: 'Insurance request management interface' }
+    ]
   }
 ];
 

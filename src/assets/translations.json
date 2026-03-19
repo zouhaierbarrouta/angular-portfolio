@@ -38,7 +38,7 @@
       "showcaseTitle": "Work Showcase",
       "job1": {
         "title": "Full Stack JS Developer - IoT Platform",
-        "description": "Developed and maintained CORE Platform features including rebranding, internationalization, generic widgets & dashboards, gateway management, anomalies detection, and billing & subscription management. Built multiple Business Accelerators: Smart Parking, Smart Construction, Waste Management, Aircraft Solution, and Fleet Ops with delivery trips management."
+        "description": "Built multiple Business Accelerators: Smart Parking, Smart Construction, Waste Management, Aircraft Solution, and Fleet Ops with delivery trips management."
       },
       "job2": {
         "title": "Front End Developer",
@@ -60,14 +60,56 @@
       "projects": {
         "smart-construction": {
           "title": "Smart Construction Suite",
-          "description": "IoT integration and management dashboards. Developed and maintained CORE Platform features including rebranding, internationalization, generic widgets & dashboards, gateway management, anomalies detection, and billing & subscription management."
+          "company": "Kian Technologies - Plateforme Retina",
+          "date": "July 2023 – February 2026",
+          "description": "Comprehensive IoT solution for Site Monitoring, Asset, Equipment & Machine Tracking, Vehicle Management, Worker Safety Monitoring, Energy Management, Access Control Management, and violation detection."
+        },
+        "fleet-ops": {
+          "title": "Fleet Ops",
+          "company": "Kian Technologies - Plateforme Retina",
+          "date": "July 2023 – February 2026",
+          "description": "Comprehensive fleet management system with delivery trips management, real-time tracking, and resource optimization modules."
+        },
+        "smart-parking": {
+          "title": "Smart Parking",
+          "company": "Kian Technologies - Plateforme Retina",
+          "date": "July 2023 – February 2026",
+          "description": "Intelligent parking management system using IoT sensors to track occupancy, manage reservations, and provide real-time parking availability."
+        },
+        "waste-management": {
+          "title": "Waste Management",
+          "company": "Kian Technologies - Plateforme Retina",
+          "date": "July 2023 – February 2026",
+          "description": "IoT-based waste management solution for optimizing collection routes, monitoring bin levels, and improving urban waste disposal efficiency."
+        },
+        "air-craft": {
+          "title": "Aircraft Solution",
+          "company": "Kian Technologies - Plateforme Retina",
+          "date": "July 2023 – February 2026",
+          "description": "Specialized solution for aircraft management and tracking, integrating IoT data for maintenance and operational monitoring."
+        },
+        "ftusa": {
+          "title": "FTUSA",
+          "company": "ADDINN Tunisie",
+          "date": "February 2021 – June 2023",
+          "description": "Insurance request management platform for FTUSA, facilitating paperless workflows and automated processing of insurance claims."
+        },
+        "poc-reclamation": {
+          "title": "Poc Réclamation",
+          "company": "ADDINN Tunisie",
+          "date": "February 2021 – June 2023",
+          "description": "POC for a banking complaints management system, designed to handle customer feedback and resolution workflows efficiently."
         },
         "smart-claim": {
           "title": "Smart Claim",
+          "company": "ADDINN Tunisie",
+          "date": "February 2021 – June 2023",
           "description": "Insurance claims management application. Part of a collaborative effort with designers, PO, and Scrum Master. Core responsibilities included integrating user interfaces with ADF (Alfresco) and Angular."
         },
         "recouvrement": {
           "title": "Digi Recouvrement (GED)",
+          "company": "ADDINN Tunisie",
+          "date": "February 2021 – June 2023",
           "description": "Banking debt recovery management application. Collaborated on requirements analysis and technical implementation to ensure a smooth, professional banking interface."
         }
       }
@@ -158,7 +200,7 @@
       "showcaseTitle": "Galerie de Projets",
       "job1": {
         "title": "Développeur Full Stack JS - Plateforme IoT",
-        "description": "Développement et maintenance des fonctionnalités de la plateforme CORE incluant le rebranding, l'internationalisation, les widgets et tableaux de bord génériques, la gestion des passerelles, la détection d'anomalies, et la gestion de la facturation et des abonnements. Construction de plusieurs accélérateurs métier : Smart Parking, Smart Construction, Waste Management, Aircraft Solution, et Fleet Ops avec gestion des trajets de livraison."
+        "description": "Construction de plusieurs accélérateurs métier : Smart Parking, Smart Construction, Waste Management, Aircraft Solution, et Fleet Ops avec gestion des trajets de livraison."
       },
       "job2": {
         "title": "Développeur Front End",
@@ -180,14 +222,56 @@
       "projects": {
         "smart-construction": {
           "title": "Smart Construction Suite",
-          "description": "Intégration IoT et tableaux de bord de gestion. Développement et maintenance des fonctionnalités de la plateforme CORE incluant le rebranding, l'internationalisation, les widgets et tableaux de bord génériques, la gestion des passerelles, la détection d'anomalies et la gestion de la facturation et des abonnements."
+          "company": "Kian Technologies - Plateforme Retina",
+          "date": "Juillet 2023 – Février 2026",
+          "description": "Solution IoT complète pour le suivi de chantier, le suivi des actifs, des équipements et des machines, la gestion des véhicules, la surveillance de la sécurité des travailleurs, la gestion de l'énergie, la gestion du contrôle d'accès et la détection d'infractions."
+        },
+        "fleet-ops": {
+          "title": "Fleet Ops",
+          "company": "Kian Technologies - Plateforme Retina",
+          "date": "Juillet 2023 – Février 2026",
+          "description": "Système complet de gestion de flotte avec gestion des trajets de livraison, suivi en temps réel et modules d'optimisation des ressources."
+        },
+        "smart-parking": {
+          "title": "Smart Parking",
+          "company": "Kian Technologies - Plateforme Retina",
+          "date": "Juillet 2023 – Février 2026",
+          "description": "Système de gestion de stationnement intelligent utilisant des capteurs IoT pour suivre l'occupation, gérer les réservations et fournir la disponibilité du stationnement en temps réel."
+        },
+        "waste-management": {
+          "title": "Waste Management",
+          "company": "Kian Technologies - Plateforme Retina",
+          "date": "Juillet 2023 – Février 2026",
+          "description": "Solution de gestion des déchets basée sur l'IoT pour optimiser les itinéraires de collecte, surveiller les niveaux des bacs et améliorer l'efficacité de l'élimination des déchets urbains."
+        },
+        "air-craft": {
+          "title": "Aircraft Solution",
+          "company": "Kian Technologies - Plateforme Retina",
+          "date": "Juillet 2023 – Février 2026",
+          "description": "Solution spécialisée pour la gestion et le suivi des aéronefs, intégrant les données IoT pour la maintenance et le suivi opérationnel."
+        },
+        "ftusa": {
+          "title": "FTUSA",
+          "company": "ADDINN Tunisie",
+          "date": "Février 2021 – Juin 2023",
+          "description": "Plateforme de gestion des demandes d'assurance pour la FTUSA, facilitant les flux de travail sans papier et le traitement automatisé des demandes d'indemnisation."
+        },
+        "poc-reclamation": {
+          "title": "Poc Réclamation",
+          "company": "ADDINN Tunisie",
+          "date": "Février 2021 – Juin 2023",
+          "description": "POC pour un système de gestion des réclamations bancaires, conçu pour gérer efficacement les retours clients et les flux de travail de résolution."
         },
         "smart-claim": {
           "title": "Smart Claim",
+          "company": "ADDINN Tunisie",
+          "date": "Février 2021 – Juin 2023",
           "description": "Application de gestion des sinistres d'assurance. Collaboration avec les designers, PO et Scrum Master. Responsabilités principales incluant l'intégration des interfaces utilisateur avec ADF (Alfresco) et Angular."
         },
         "recouvrement": {
           "title": "Digi Recouvrement (GED)",
+          "company": "ADDINN Tunisie",
+          "date": "Février 2021 – Juin 2023",
           "description": "Application de gestion du recouvrement de créances bancaires. Collaboration à l'analyse des besoins et à la mise en œuvre technique pour assurer une interface bancaire fluide et professionnelle."
         }
       }
