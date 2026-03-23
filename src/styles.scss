@@ -1,1 +1,52 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* Global Styles */
 /* You can add global styles to this file, and also import other style files */
+
+/* Angular Material SnackBar Custom Styles - Faithful to the Design */
+.snackbar-success {
+  background-color: #bac964 !important; /* The main green/yellow color from the theme */
+  color: #222 !important; /* Dark text for contrast */
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.snackbar-error {
+  background-color: #d9534f !important; /* Standard but refined error red */
+  color: white !important;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+/* Style the action button in the toast */
+.mat-simple-snackbar-action {
+  color: inherit !important; /* Inherit parent color for the button */
+  font-weight: 800 !important; /* Make it more prominent */
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.mat-simple-snackbar-action button {
+  color: inherit !important;
+  background: white !important; /* White button in snackbar */
+  padding: 0 10px !important;
+  margin-left: 10px !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+}
+
+.snackbar-success .mat-simple-snackbar-action button {
+    background: #222 !important;
+    color: #bac964 !important;
+}
+
+.snackbar-error .mat-simple-snackbar-action button {
+    background: white !important;
+    color: #d9534f !important;
+}
+
+/* Ensure the SnackBar text is centered and looks modern */
+.mat-simple-snackbar {
+  justify-content: space-between !important;
+  font-family: 'Nunito Sans', sans-serif !important;
+}

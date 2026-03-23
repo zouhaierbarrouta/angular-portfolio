@@ -8,30 +8,50 @@
             </div>
 
             <div class="col-md-7 mb-5 mb-md-0">
-                <form action="" class="site-form">
-                    <h3 class="mb-5" data-i18n="contact.formTitle">Contact</h3>
+                <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="site-form">
+                    <h3 class="mb-5" data-i18n="contact.formTitle">Message</h3>
                     <div class="form-group">
                         <input type="text" class="form-control px-3 py-4" placeholder=""
-                            data-i18n-placeholder="contact.namePlaceholder">
+                            data-i18n-placeholder="contact.namePlaceholder"
+                            formControlName="name">
+                        <small class="text-danger" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+                            Required name / Nom requis
+                        </small>
                     </div>
                     <div class="form-group">
                         <input type="email" class="form-control px-3 py-4" placeholder=""
-                            data-i18n-placeholder="contact.emailPlaceholder">
+                            data-i18n-placeholder="contact.emailPlaceholder"
+                            formControlName="email">
+                        <small class="text-danger" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+                            Valid email required / Email valide requis
+                        </small>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control px-3 py-4" placeholder=""
-                            data-i18n-placeholder="contact.phonePlaceholder">
+                        <input type="text" class="form-control px-3 py-4" placeholder=""
+                            data-i18n-placeholder="contact.phonePlaceholder"
+                            formControlName="phone">
+                        <small class="text-danger" *ngIf="contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid">
+                            Required phone / Téléphone requis
+                        </small>
                     </div>
                     <div class="form-group mb-5">
                         <textarea class="form-control px-3 py-4" cols="30" rows="10" placeholder=""
-                            data-i18n-placeholder="contact.messagePlaceholder"></textarea>
+                            data-i18n-placeholder="contact.messagePlaceholder"
+                            formControlName="message"></textarea>
+                        <small class="text-danger" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+                            Required message / Message requis
+                        </small>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary  px-4 py-3" value=""
-                            data-i18n-value="contact.submitButton">
+                        <button type="submit" class="btn btn-primary px-4 py-3" [disabled]="contactForm.invalid || isSubmitting"
+                            data-i18n="contact.submitButton">
+                            Send Message
+                        </button>
                     </div>
                 </form>
             </div>
+
+
             <div class="col-md-5 pl-md-5">
                 <h3 class="mb-5" data-i18n="contact.contactDetails">My Contact Details</h3>
                 <ul class="site-contact-details">
