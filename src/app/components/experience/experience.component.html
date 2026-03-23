@@ -9,8 +9,8 @@
         </div>
 
         <div class="row mb-5 align-items-stretch" *ngFor="let project of projects">
-            <div class="col-md-5 mb-4 mb-md-0 d-flex">
-                <div class="resume-item w-100 p-4 shadow-sm" style="border-radius: 8px; background-color: #333;">
+            <div class="col-md-5 mb-4 mb-md-0 d-flex site-animate" data-animate-effect="fadeInUp">
+                <div class="resume-item w-100 p-4 shadow-sm" style="background-color: #333;">
                     <span class="date d-block mb-2 text-primary">
                         <span class="icon-calendar"></span> 
                         <span [attr.data-i18n]="'experience.projects.' + project.id + '.date'">{{ project.date }}</span>
@@ -26,22 +26,22 @@
                 </div>
             </div>
             
-            <div class="col-md-7 d-flex">
+            <div class="col-md-7 d-flex site-animate" data-animate-effect="fadeInUp">
                 <app-image-slider #slider class="w-100" [images]="project.images" [maxScreensToShow]="5"></app-image-slider>
             </div>
         </div>
 
         <div class="row mt-5">
             <div class="col-md-12">
-                <h2 class="mb-5 text-center" data-i18n="experience.certifications.title">Certifications</h2>
+                <h2 class="mb-5 text-center site-animate" data-animate-effect="fadeInUp" data-i18n="experience.certifications.title">Certifications</h2>
                 <div class="row">
-                    <div class="col-md-6 d-flex">
-                        <div class="resume-item mb-4 w-100 p-4 shadow-sm" style="background-color: #333; border-radius: 8px;">
+                    <div class="col-md-6 d-flex site-animate" data-animate-effect="fadeInUp">
+                        <div class="resume-item mb-4 w-100 p-4 shadow-sm" style="background-color: #333;">
                             <h3 data-i18n="experience.certifications.cert1.name" class="text-white">HTML/CSS/JavaScript Certification</h3>
                             <p data-i18n="experience.certifications.cert1.description" class="text-light">Certified in web development fundamentals including HTML, CSS, and JavaScript.</p>
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex">
+                    <div class="col-md-6 d-flex site-animate" data-animate-effect="fadeInUp">
                         <div class="resume-item mb-4 w-100 p-4 shadow-sm" style="background-color: #333; border-radius: 8px;">
                             <h3 data-i18n="experience.certifications.cert2.name" class="text-white">MPR Alcatel Certification</h3>
                             <p data-i18n="experience.certifications.cert2.description" class="text-light">Alcatel Lucent Maroc certification in network and telecommunications technologies.</p>

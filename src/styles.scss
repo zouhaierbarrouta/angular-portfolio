@@ -18,6 +18,14 @@
   border-radius: 4px;
 }
 
+/* Unified Card Styles */
+.resume-item, 
+.site-service-item, 
+.blog-entry,
+.single-portfolio {
+  border-radius: 12px !important;
+}
+
 /* Style the action button in the toast */
 .mat-simple-snackbar-action {
   color: inherit !important; /* Inherit parent color for the button */
@@ -50,3 +58,41 @@
   justify-content: space-between !important;
   font-family: 'Nunito Sans', sans-serif !important;
 }
+
+/* Scroll Animation Base Styles */
+.site-animate {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.site-animate.site-animated {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Custom Smooth Bottom to Top Animation Override */
+.fadeInUp {
+  animation-name: fadeInUpCustom !important;
+  animation-duration: 1.2s !important;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  animation-fill-mode: both !important;
+}
+
+@keyframes fadeInUpCustom {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Customize other side animations for consistency */
+.fadeInLeft, .fadeInRight {
+  animation-duration: 1.2s !important;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+
