@@ -113,12 +113,18 @@
 
 
 
-
-
+	// Expose for Angular to call on route change
+	window.refreshAnimations = function() {
+		// Clear existing waypoints if any (Waypoints usually handles this, but we restart logic)
+		if (typeof $.waypoints !== 'undefined') {
+			$.waypoints('refresh');
+		}
+		contentWayPoint();
+	};
 
 	$(function(){
 		OnePageNav();
-		contentWayPoint();
+		window.refreshAnimations();
 		navbarState();
 		smoothScroll();
 		
@@ -139,4 +145,3 @@
 
 
 })();
-
