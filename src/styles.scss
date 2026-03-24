@@ -9,7 +9,7 @@
   --text-main: #ffffff;
   --text-muted: rgba(255, 255, 255, 0.7);
   --section-bg: #222;
-  --card-border: transparent;
+  --card-border: rgba(255, 255, 255, 0.12); /* Visible divider in dark mode */
   --navbar-scrolled-bg: rgba(34, 34, 34, 0.8);
   --navbar-text: #ffffff;
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -22,7 +22,7 @@
   --text-main: #000000;
   --text-muted: rgba(0, 0, 0, 0.6);
   --section-bg: #ffffff;
-  --card-border: #e9ecef;
+  --card-border: rgba(0, 0, 0, 0.08); /* Sophisticated divider in light mode */
   --navbar-scrolled-bg: rgba(255, 255, 255, 0.8);
   --navbar-text: #000000;
   --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -41,6 +41,10 @@ p, span, h1, h2, h3, h4, h5, h6, label, div {
 
 .site-section {
   background-color: var(--section-bg) !important;
+}
+
+mat-divider {
+  border-top-color: var(--card-border) !important;
 }
 
 .resume-item, 
@@ -208,14 +212,28 @@ p, span, h1, h2, h3, h4, h5, h6, label, div {
   align-items: center;
 }
 
+/* Profile Image Styles */
 img.hero-img {
-  width: 450px;
-  max-width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  width: 450px !important;
+  max-width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
   border-radius: 50% !important;
-  border: 5px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+  border: 5px solid rgba(255, 255, 255, 0.1) !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#section-about .img-fluid {
+  width: 450px !important;
+  max-width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  border-radius: 12px !important; /* Like the other cards */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 768px) {
