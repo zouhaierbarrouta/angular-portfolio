@@ -242,6 +242,26 @@ img.hero-img {
   .hero-stat { margin-bottom: 20px; }
   .d-flex { justify-content: center !important; }
   .hero-image-container { margin-top: 50px; }
+  
+  /* Mobile Full-Width Buttons */
+  .hero-cta-wrapper {
+    flex-direction: column !important;
+    gap: 15px !important;
+    width: 100% !important;
+    padding: 0 15px;
+  }
+  
+  .hero-cta-wrapper .hero-btn {
+    width: 100% !important;
+    margin-right: 0 !important;
+    text-align: center;
+  }
+}
+
+.hero-cta-wrapper {
+  display: flex !important;
+  gap: 20px !important;
+  flex-wrap: wrap !important;
 }
 
 .pt-5, .py-5 {
@@ -315,6 +335,10 @@ img.hero-img {
   border-radius: 12px !important;
   font-weight: 600 !important;
   transition: all 0.3s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
 }
 
 .btn:hover {
