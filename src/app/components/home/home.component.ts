@@ -9,6 +9,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
 
+  // Animated numbers
+  expCount: number = 0;
+  projectsCount: number = 0;
+  techCount: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -40,6 +45,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
             }
         }, 300);
     }
+
+    // Numbers animation
+    this.animate(5, (v) => this.expCount = v);
+    this.animate(10, (v) => this.projectsCount = v);
+    this.animate(6, (v) => this.techCount = v);
+  }
+
+  private animate(target: number, setter: (val: number) => void): void {
+    const duration = 1500;
+    const fps = 30;
+    const totalFrames = (duration / 1000) * fps;
+    let frame = 0;
+
+    const interval = setInterval(() => {
+      frame++;
+      const current = Math.floor(target * (frame / totalFrames));
+      if (current >= target) {
+        setter(target);
+        clearInterval(interval);
+      } else {
+        setter(current);
+      }
+    }, 1000 / fps);
   }
 
 }
