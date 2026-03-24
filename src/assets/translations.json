@@ -9,7 +9,19 @@
     },
     "hero": {
       "greeting": "Hello, I'm",
-      "title": "Full Stack Developer"
+      "title": "Full Stack Developer",
+      "stats": {
+        "expValue": "5+",
+        "expLabel": "Years Exp.",
+        "projectsValue": "10+",
+        "projectsLabel": "Projects",
+        "techValue": "6+",
+        "techLabel": "Technologies"
+      },
+      "buttons": {
+        "viewProjects": "View Projects",
+        "contactMe": "Contact Me"
+      }
     },
     "about": {
       "title": "About Me",
@@ -173,7 +185,19 @@
     },
     "hero": {
       "greeting": "Bonjour, je suis",
-      "title": "Développeur Full Stack"
+      "title": "Développeur Full Stack",
+      "stats": {
+        "expValue": "5+",
+        "expLabel": "Années d'Exp.",
+        "projectsValue": "10+",
+        "projectsLabel": "Projets",
+        "techValue": "6+",
+        "techLabel": "Technologies"
+      },
+      "buttons": {
+        "viewProjects": "Voir Projets",
+        "contactMe": "Contactez-moi"
+      }
     },
     "about": {
       "title": "À propos de moi",
