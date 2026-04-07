@@ -59,12 +59,25 @@
     box-shadow: 0 4px 15px rgba(186, 201, 100, 0.2) !important;
   }
 
-  &:active {
+  &:focus, &:active {
+    outline: none !important;
+    box-shadow: none !important;
     transform: translateY(0);
   }
 
   span {
     color: inherit !important;
+  }
+
+  .nav-icon-img {
+    width: 18px;
+    height: 18px;
+    filter: invert(1); // Make the dark blue SVG white to match the button theme
+    transition: transform 0.4s ease;
+  }
+
+  &:hover .nav-icon-img {
+    transform: rotate(45deg); // Nice subtle settings gear rotation
   }
 }
 

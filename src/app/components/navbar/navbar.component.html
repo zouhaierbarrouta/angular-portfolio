@@ -19,6 +19,12 @@
                 </button>
             </div>
 
+            <div class="statistics-toggle ml-2">
+                <button (click)="onStatisticsClick($event)" class="nav-ctrl-btn">
+                    <img src="/assets/images/icons/settings.svg" alt="Settings" class="nav-icon-img">
+                </button>
+            </div>
+
             <!-- Hamburger toggler right after controls -->
             <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbarsExample09"
                 aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,9 +42,6 @@
                 <li class="nav-item"><a class="nav-link" href="#section-experience" (click)="navigateToSection('section-experience', $event)"
                         data-i18n="nav.experience">Experience</a></li>
                 <li class="nav-item"><a class="nav-link" href="#section-contact" (click)="navigateToSection('section-contact', $event)" data-i18n="nav.contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [class.active]="isActive('/statistics')" href="#" (click)="onStatisticsClick($event)">Statistics</a>
                 </li>
             </ul>
         </div>
