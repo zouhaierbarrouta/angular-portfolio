@@ -1,0 +1,33 @@
+.nav-link {
+  transition: all 0.3s ease;
+  position: relative;
+  
+  &.active {
+    color: #bac964 !important;
+    font-weight: 700;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 15%;
+      right: 15%;
+      height: 2px;
+      background-color: #bac964;
+    }
+  }
+}
+
+.text-danger {
+  color: #ff4d4d !important;
+  font-weight: 700;
+  
+  &:hover {
+    color: #ff0000 !important;
+  }
+}
+
+// Ensure Statistics button is consistent in the navbar list
+.navbar-nav .nav-item .nav-link {
+    cursor: pointer;
+}

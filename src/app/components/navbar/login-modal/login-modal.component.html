@@ -1,0 +1,35 @@
+<h2 mat-dialog-title>Admin <strong>Access</strong></h2>
+<mat-dialog-content class="pb-4">
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+    <div class="row w-100 mx-0 mt-3">
+      <div class="col-12 px-0">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <mat-icon matPrefix>account_circle</mat-icon>
+          <input matInput [(ngModel)]="username" name="username" required autocomplete="username" placeholder="Enter admin username">
+        </mat-form-field>
+      </div>
+      
+      <div class="col-12 px-0">
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <mat-icon matPrefix>lock</mat-icon>
+          <input matInput [(ngModel)]="password" name="password" type="password" required autocomplete="current-password" placeholder="Enter security key">
+        </mat-form-field>
+      </div>
+    </div>
+    
+    <div *ngIf="error" class="text-danger">
+      <mat-icon class="align-middle mr-1" style="font-size: 18px;">warning</mat-icon> {{ error }}
+    </div>
+    
+    <mat-dialog-actions class="modal-actions px-0">
+      <button mat-button type="button" (click)="onNoClick()" class="btn-cancel">
+        Cancel Permission
+      </button>
+      <button mat-flat-button color="primary" type="submit" class="btn-login ml-auto">
+        Unlock Dashboard
+      </button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>

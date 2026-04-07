@@ -1,0 +1,131 @@
+:host {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  padding: 40px !important;
+}
+
+::ng-deep .custom-dialog-container .mat-dialog-container {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border-radius: 20px !important;
+  padding: 0 !important; /* Managed by host padding */
+  border: 1px solid var(--card-border) !important;
+  box-shadow: var(--shadow) !important;
+  overflow: hidden !important;
+}
+
+h2 {
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--text-main) !important;
+  margin-bottom: 30px !important;
+  text-align: center;
+  font-size: 24px;
+  
+  strong {
+    font-weight: 800;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 25px;
+
+  ::ng-deep {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+    .mat-form-field-flex {
+      background-color: var(--bg-input) !important;
+      border-radius: 12px !important;
+      padding: 1em 1.25em 0.5em 1.25em !important;
+      border: 1px solid var(--card-border) !important;
+    }
+    .mat-form-field-label {
+      color: var(--text-muted) !important;
+      margin-left: 5px;
+    }
+    .mat-input-element {
+      color: var(--text-main) !important;
+      font-weight: 500;
+      padding-right: 10px;
+    }
+    .mat-icon {
+      color: #bac964 !important;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+      margin-right: 12px;
+    }
+    .mat-form-field-invalid .mat-icon {
+      color: #d9534f !important;
+    }
+    .mat-form-field-underline {
+      display: none;
+    }
+  }
+}
+
+.text-danger {
+  color: #d9534f !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.modal-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 !important;
+  border-top: none !important;
+}
+
+.btn-cancel {
+  color: var(--text-muted) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 100px !important;
+  padding: 10px 20px !important;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: var(--text-main) !important;
+    background: rgba(255,255,255,0.05);
+  }
+}
+
+.btn-login {
+  background-color: #bac964 !important;
+  color: #222 !important;
+  border-radius: 100px !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
+  letter-spacing: 0.2rem !important;
+  padding: 12px 40px !important;
+  font-weight: 800 !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(186, 201, 100, 0.3) !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    background-color: #a5b550 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(186, 201, 100, 0.4) !important;
+  }
+}

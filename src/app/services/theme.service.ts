@@ -8,11 +8,7 @@ export class ThemeService {
 
   constructor() {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
-    if (savedTheme) {
-      this.setTheme(savedTheme);
-    } else {
-      this.setTheme('dark'); // Default
-    }
+    this.setTheme(savedTheme || 'dark');
   }
 
   toggleTheme() {

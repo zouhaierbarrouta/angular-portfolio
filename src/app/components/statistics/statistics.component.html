@@ -1,0 +1,127 @@
+<div class="statistics-container">
+  <div class="container py-4">
+    <header class="dashboard-header d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+      <div class="header-left">
+        <h1 class="text-white">Admin <strong>Statistics</strong></h1>
+        <div class="badge-info mb-3 mb-md-0 d-inline-block">
+          <i class="icon-user-check"></i> Connected as barroua.zouhaier@gmail.com
+        </div>
+      </div>
+      <div class="header-right">
+        <button mat-button class="btn-logout" (click)="onLogout()">
+          <mat-icon class="mr-2">logout</mat-icon> Sign Out
+        </button>
+      </div>
+    </header>
+
+    <div class="row">
+      <!-- Summary Cards -->
+      <div class="col-md-3 mb-4">
+        <mat-card class="summary-card">
+          <mat-card-header>
+            <mat-card-title>Total Visits</mat-card-title>
+            <mat-card-subtitle>Past Week</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="stat-value">1,480</div>
+            <div class="stat-change success">↑ 12% vs last week</div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <mat-card class="summary-card">
+          <mat-card-header>
+            <mat-card-title>Unique Visitors</mat-card-title>
+            <mat-card-subtitle>Active Sessions</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="stat-value">950</div>
+            <div class="stat-change success">↑ 8% vs last week</div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <mat-card class="summary-card">
+          <mat-card-header>
+            <mat-card-title>Avg. Duration</mat-card-title>
+            <mat-card-subtitle>Stickiness</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="stat-value">2m 45s</div>
+            <div class="stat-change danger">↓ 2% vs last week</div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <mat-card class="summary-card">
+          <mat-card-header>
+            <mat-card-title>Bounce Rate</mat-card-title>
+            <mat-card-subtitle>Engagement</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div class="stat-value">38.5%</div>
+            <div class="stat-change success">↓ 5% vs last week</div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <!-- Chart section -->
+      <div class="col-lg-8 mb-4">
+        <mat-card class="main-dashboard-card h-100">
+          <mat-card-header>
+            <mat-card-title>Traffic Trends</mat-card-title>
+          </mat-card-header>
+          <mat-card-content class="pt-4">
+            <div class="chart-container-inner">
+              <div #trafficChart class="echart-display"></div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- Top Pages -->
+      <div class="col-lg-4 mb-4">
+        <mat-card class="main-dashboard-card h-100">
+          <mat-card-header>
+            <mat-card-title>Top Performance</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <ul class="page-list list-unstyled">
+              <li *ngFor="let page of topPages" class="page-item d-flex justify-content-between align-items-center">
+                <span class="page-name">{{ page.page }}</span>
+                <span class="badge badge-primary">{{ page.views }}</span>
+              </li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- GA Instructions -->
+    <div class="row">
+      <div class="col-12 mt-4">
+        <mat-card class="ga-instruction-card">
+          <mat-card-header>
+            <mat-card-title>
+              <mat-icon class="mr-2">sync_problem</mat-icon> Connection Guide
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>The dashboard currently displays static mock data. To link your live <strong>barroua.zouhaier@gmail.com</strong> Google Analytics account:</p>
+            <ol class="mt-3">
+              <li>Open <strong>Google Cloud Console</strong> and enable the <strong>Google Analytics Data API</strong>.</li>
+              <li>Create a <strong>Service Account</strong> email and download the credentials JSON.</li>
+              <li>Add this Service Account email as a user with <strong>Viewer</strong> access in your Google Analytics Admin panel.</li>
+              <li>Integrate the <code>google-analytics-data</code> library to authorize and fetch real-time reports.</li>
+            </ol>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

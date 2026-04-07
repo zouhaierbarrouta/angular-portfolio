@@ -6,7 +6,8 @@
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng serve",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng build",
     "watch": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng build --watch --configuration development",
-    "test": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng test"
+    "test": "cross-env NODE_OPTIONS=--openssl-legacy-provider ng test",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "echarts": "^6.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

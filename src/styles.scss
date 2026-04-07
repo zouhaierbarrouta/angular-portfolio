@@ -72,8 +72,15 @@ mat-divider {
 .site-navbar.scrolled .language-toggle .btn,
 .site-navbar.scrolled .language-toggle .btn span,
 .site-navbar.scrolled .theme-toggle .btn,
-.site-navbar.scrolled .theme-toggle .btn span {
-  color: var(--text-main) !important; /* Toggle based on theme only when scrolled */
+.site-navbar.scrolled .theme-toggle .btn span,
+/* static-nav: for non-home pages, unaffected by jQuery scroll handler */
+.site-navbar.static-nav .navbar-nav > li > a,
+.site-navbar.static-nav .navbar-brand,
+.site-navbar.static-nav .language-toggle .btn,
+.site-navbar.static-nav .language-toggle .btn span,
+.site-navbar.static-nav .theme-toggle .btn,
+.site-navbar.static-nav .theme-toggle .btn span {
+  color: var(--text-main) !important;
 }
 
 /* Ensure Hero Text is always white */
@@ -119,14 +126,13 @@ mat-divider {
 }
 
 
-.site-navbar.scrolled {
+.site-navbar.scrolled,
+.site-navbar.static-nav {
   background-color: var(--navbar-scrolled-bg) !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
   box-shadow: var(--shadow);
 }
-
-
 
 /* Hero Section Split Layout Content */
 .intro-text .site-heading {
@@ -187,21 +193,21 @@ mat-divider {
 .social-box {
   width: 45px;
   height: 45px;
-  background: #1a1a1a;
+  background: var(--bg-card);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #888 !important;
+  color: var(--text-muted) !important;
   transition: all 0.3s ease;
-  border: 1px solid #2a2a2a;
+  border: 1px solid var(--card-border);
 }
 
 .social-box:hover {
-  background: #5678ff;
-  color: #fff !important;
+  background: #bac964;
+  color: #222 !important;
   transform: translateY(-3px);
-  border-color: #5678ff;
+  border-color: #bac964;
 }
 
 /* Image on the right container */
@@ -446,3 +452,15 @@ img.img-fluid {
 }
 
 
+.site-footer .social-item {
+  background: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--card-border) !important;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #bac964 !important;
+    color: #222 !important;
+    transform: translateY(-3px);
+  }
+}

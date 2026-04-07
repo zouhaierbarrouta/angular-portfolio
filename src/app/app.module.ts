@@ -5,6 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +26,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import { ExperienceDetailsComponent } from './components/experience-details/experience-details.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
+import { LoginModalComponent } from './components/navbar/login-modal/login-modal.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +42,9 @@ import { MainContentComponent } from './components/main-content/main-content.com
     FooterComponent,
     ImageSliderComponent,
     ExperienceDetailsComponent,
-    MainContentComponent
+    MainContentComponent,
+    LoginModalComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +53,14 @@ import { MainContentComponent } from './components/main-content/main-content.com
     HttpClientModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
