@@ -1,26 +1,32 @@
 <nav class="navbar navbar-expand-lg site-navbar" [class.static-nav]="!isHomePage()" id="pb-navbar">
 
     <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
-            aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="d-flex align-items-center">
+        <!-- Brand (optional, empty spacer to push toggler right) -->
+        <span class="navbar-brand-spacer"></span>
+
+        <!-- Right-side always-visible controls + toggler -->
+        <div class="d-flex align-items-center ml-auto">
             <div class="language-toggle">
-                <button id="langToggle" class="btn btn-sm btn-outline-primary">
-                    <span id="currentLang">EN</span> / <span id="otherLang">FR</span>
+                <button id="langToggle" class="nav-ctrl-btn">
+                    <span id="currentLang">EN</span>/<span id="otherLang">FR</span>
                 </button>
             </div>
 
             <div class="theme-toggle ml-2">
-                <button (click)="toggleTheme()" class="btn btn-sm btn-outline-primary">
+                <button (click)="toggleTheme()" class="nav-ctrl-btn">
                     <span>{{ themeService.getTheme() === 'dark' ? '☀️' : '🌙' }}</span>
                 </button>
             </div>
+
+            <!-- Hamburger toggler right after controls -->
+            <button class="navbar-toggler ml-2" type="button" data-toggle="collapse" data-target="#navbarsExample09"
+                aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
 
-
+        <!-- Collapsible nav links -->
         <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample09">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="#section-home" (click)="navigateToSection('section-home', $event)" data-i18n="nav.home">Home</a></li>

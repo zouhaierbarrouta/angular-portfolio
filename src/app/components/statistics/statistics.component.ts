@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit, HostListener } from '@angular/core';
 import { AnalyticsService } from '../../services/analytics.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import * as echarts from 'echarts';
   templateUrl: './statistics.component.html',
   styleUrls: ['./statistics.component.scss']
 })
-export class StatisticsComponent implements OnInit, AfterViewInit {
+export class StatisticsComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('trafficChart') trafficChartRef!: ElementRef<HTMLCanvasElement>;
 
   visitsData: any[] = [];
@@ -49,8 +49,21 @@ export class StatisticsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.viewReady = true;
     if (this.dataReady) {
-      // Small timeout ensures the host element has its final layout dimensions
       setTimeout(() => this.initChart(), 100);
+    }
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+    if (this.chartInstance) {
+      this.chartInstance.resize();
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.chartInstance) {
+      this.chartInstance.dispose();
+      this.chartInstance = null;
     }
   }
 
