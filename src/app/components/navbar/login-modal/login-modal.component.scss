@@ -5,6 +5,10 @@
   background-color: var(--bg-card);
   color: var(--text-main);
   padding: 40px !important;
+
+  @media (max-width: 576px) {
+    padding: 30px 20px !important;
+  }
 }
 
 ::ng-deep .custom-dialog-container .mat-dialog-container {
@@ -26,6 +30,12 @@ h2 {
   text-align: center;
   font-size: 24px;
   
+  @media (max-width: 576px) {
+    font-size: 18px;
+    letter-spacing: 0.15rem;
+    margin-bottom: 20px !important;
+  }
+
   strong {
     font-weight: 800;
   }
@@ -87,11 +97,17 @@ mat-form-field {
 .modal-actions {
   margin-top: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; // Align to the right
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   padding: 0 !important;
   border-top: none !important;
+
+  @media (max-width: 480px) {
+    justify-content: center; // Center on very small screens
+    gap: 10px;
+    width: 100%;
+  }
 }
 
 .btn-cancel {
@@ -101,12 +117,19 @@ mat-form-field {
   font-size: 11px;
   font-weight: 700;
   border-radius: 100px !important;
-  padding: 10px 20px !important;
+  padding: 8px 15px !important; // Minimized
+  border: 1px solid #bac964 !important; // Branded border
   transition: all 0.3s ease;
   
   &:hover {
     color: var(--text-main) !important;
     background: rgba(255,255,255,0.05);
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+    letter-spacing: 0.1rem;
+    padding: 6px 12px !important;
   }
 }
 
@@ -117,7 +140,7 @@ mat-form-field {
   text-transform: uppercase !important;
   font-size: 12px !important;
   letter-spacing: 0.2rem !important;
-  padding: 12px 40px !important;
+  padding: 10px 30px !important; // Minimized
   font-weight: 800 !important;
   border: none !important;
   box-shadow: 0 4px 15px rgba(186, 201, 100, 0.3) !important;
@@ -127,5 +150,11 @@ mat-form-field {
     background-color: #a5b550 !important;
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(186, 201, 100, 0.4) !important;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+    letter-spacing: 0.1rem;
+    padding: 10px 20px !important;
   }
 }

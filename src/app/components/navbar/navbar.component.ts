@@ -32,8 +32,8 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(['/statistics']);
     } else {
       const dialogRef = this.dialog.open(LoginModalComponent, {
-        width: '700px',
-        height: '450px',
+        width: '95%',
+        maxWidth: '700px',
         panelClass: 'custom-dialog-container'
       });
 
