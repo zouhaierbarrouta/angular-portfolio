@@ -11,6 +11,7 @@ export class LoginModalComponent implements OnInit {
   username = '';
   password = '';
   error = '';
+  hidePassword = true;
 
   constructor(
     public dialogRef: MatDialogRef<LoginModalComponent>,
@@ -22,6 +23,10 @@ export class LoginModalComponent implements OnInit {
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  togglePasswordVisibility(): void {
+    this.hidePassword = !this.hidePassword;
   }
 
   onLogin(): void {

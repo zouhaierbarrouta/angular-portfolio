@@ -11,6 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -60,6 +62,8 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatMenuModule,
+    MatRadioModule,
     FormsModule,
   ],
   providers: [],

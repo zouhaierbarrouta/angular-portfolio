@@ -75,7 +75,29 @@ mat-form-field {
       color: #bac964 !important;
       opacity: 0.8;
       transition: all 0.3s ease;
+    }
+    .mat-form-field-prefix .mat-icon {
       margin-right: 12px;
+    }
+    .mat-form-field-suffix button {
+      width: 30px !important;
+      height: 30px !important;
+      line-height: 30px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-right: -5px;
+      
+      .mat-icon {
+        font-size: 20px !important;
+        width: 20px !important;
+        height: 20px !important;
+      }
+      
+      &:focus {
+        outline: none !important;
+        background: transparent !important;
+      }
     }
     .mat-form-field-invalid .mat-icon {
       color: #d9534f !important;

@@ -11,15 +11,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  currentLanguage: 'en' | 'fr' = 'en';
 
   constructor(
     public themeService: ThemeService,
     private dialog: MatDialog,
     public authService: AuthService,
     private router: Router
-  ) { }
+  ) { 
+    this.currentLanguage = (localStorage.getItem('language') as 'en' | 'fr') || 'en';
+  }
 
   ngOnInit(): void {
+  }
+
+  changeLanguage(lang: 'en' | 'fr') {
+    this.currentLanguage = lang;
+    if ((window as any).applyLanguage) {
+      (window as any).applyLanguage(lang);
+    }
   }
 
   toggleTheme() {

@@ -8,14 +8,24 @@
         <!-- Right-side always-visible controls + toggler -->
         <div class="d-flex align-items-center ml-auto">
             <div class="language-toggle">
-                <button id="langToggle" class="nav-ctrl-btn">
-                    <span id="currentLang">EN</span>/<span id="otherLang">FR</span>
+                <button [matMenuTriggerFor]="langMenu" class="nav-ctrl-btn">
+                    <img src="/assets/images/icons/language.svg" alt="Language" class="nav-icon-img">
                 </button>
+                <mat-menu #langMenu="matMenu" class="custom-lang-menu">
+                    <div class="p-3" (click)="$event.stopPropagation()">
+                        <mat-radio-group [(ngModel)]="currentLanguage" (change)="changeLanguage($event.value)" class="d-flex flex-column">
+                            <mat-radio-button value="en" class="mb-2">English (EN)</mat-radio-button>
+                            <mat-radio-button value="fr">Français (FR)</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </mat-menu>
             </div>
 
             <div class="theme-toggle ml-2">
                 <button (click)="toggleTheme()" class="nav-ctrl-btn">
-                    <span>{{ themeService.getTheme() === 'dark' ? '☀️' : '🌙' }}</span>
+                    <img [src]="themeService.getTheme() === 'dark' ? '/assets/images/icons/sun.svg' : '/assets/images/icons/moon.svg'" 
+                         [alt]="themeService.getTheme() === 'dark' ? 'Light Mode' : 'Dark Mode'"
+                         class="nav-icon-img">
                 </button>
             </div>
 

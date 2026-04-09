@@ -72,12 +72,20 @@
   .nav-icon-img {
     width: 18px;
     height: 18px;
-    filter: invert(1); // Make the dark blue SVG white to match the button theme
-    transition: transform 0.4s ease;
+    // Perfect filter for #bac964 (the theme primary color)
+    filter: brightness(0) saturate(100%) invert(84%) sepia(16%) saturate(1072%) hue-rotate(24deg) brightness(89%) contrast(91%) !important;
+    transition: all 0.4s ease;
+    opacity: 0.9;
+  }
+
+  .nav-ctrl-btn:hover .nav-icon-img {
+    filter: brightness(0) saturate(100%) invert(84%) sepia(16%) saturate(1072%) hue-rotate(24deg) brightness(89%) contrast(91%) !important;
+    opacity: 1;
+    transform: scale(1.1);
   }
 
   &:hover .nav-icon-img {
-    transform: rotate(45deg); // Nice subtle settings gear rotation
+    transform: rotate(45deg); // Specific for settings icon which shares this class
   }
 }
 
@@ -131,4 +139,53 @@
   background-repeat: no-repeat !important;
   background-position: center !important;
   display: block;
+}
+
+// ---- Language Menu Custom Styling ----
+::ng-deep .custom-lang-menu.mat-menu-panel {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 12px !important;
+  min-width: 180px !important;
+  overflow: hidden !important;
+  margin-top: 10px !important;
+  box-shadow: var(--shadow) !important;
+
+  .mat-radio-button {
+    color: var(--text-main) !important;
+    font-family: inherit !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    display: block;
+
+    &:hover {
+        background: rgba(186, 201, 100, 0.05);
+        border-radius: 8px;
+    }
+
+    .mat-radio-label {
+        padding: 8px 12px !important;
+    }
+
+    .mat-radio-label-content {
+      padding-left: 12px !important;
+    }
+
+    .mat-radio-outer-circle {
+      border-color: var(--text-muted) !important;
+      border-width: 2px !important;
+    }
+
+    &.mat-radio-checked .mat-radio-outer-circle {
+      border-color: #bac964 !important;
+    }
+
+    .mat-radio-inner-circle {
+      background-color: #bac964 !important;
+    }
+
+    .mat-ripple-element {
+        background-color: rgba(186, 201, 100, 0.2) !important;
+    }
+  }
 }
