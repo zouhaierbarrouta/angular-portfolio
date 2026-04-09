@@ -9,7 +9,7 @@
   --text-main: #ffffff;
   --text-muted: rgba(255, 255, 255, 0.7);
   --section-bg: #222;
-  --card-border: rgba(255, 255, 255, 0.12); /* Visible divider in dark mode */
+  --card-border: rgba(255, 255, 255, 0.12);
   --navbar-scrolled-bg: rgba(34, 34, 34, 0.8);
   --navbar-text: #ffffff;
   --placeholder-color: #ffffff;
@@ -23,7 +23,7 @@
   --text-main: #000000;
   --text-muted: rgba(0, 0, 0, 0.6);
   --section-bg: #ffffff;
-  --card-border: rgba(0, 0, 0, 0.08); /* Sophisticated divider in light mode */
+  --card-border: rgba(0, 0, 0, 0.08);
   --navbar-scrolled-bg: rgba(255, 255, 255, 0.8);
   --navbar-text: #000000;
   --placeholder-color: #000000;
@@ -37,7 +37,16 @@ body {
 }
 
 /* Force all text, labels and placeholders to theme colors */
-p, span, h1, h2, h3, h4, h5, h6, label, div {
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+div {
   color: var(--text-main);
 }
 
@@ -49,8 +58,8 @@ mat-divider {
   border-top-color: var(--card-border) !important;
 }
 
-.resume-item, 
-.site-service-item, 
+.resume-item,
+.site-service-item,
 .blog-entry,
 .single-portfolio {
   background-color: var(--bg-card) !important;
@@ -59,24 +68,25 @@ mat-divider {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.site-navbar .navbar-nav > li > a,
+.site-navbar .navbar-nav>li>a,
 .site-navbar .navbar-brand,
 .language-toggle .btn,
 .language-toggle .btn span,
 .theme-toggle .btn,
 .theme-toggle .btn span {
-  color: #ffffff !important; /* Always white on hero (initial state) */
+  color: #ffffff !important;
+  /* Always white on hero (initial state) */
   transition: all 0.3s ease;
 }
 
-.site-navbar.scrolled .navbar-nav > li > a,
+.site-navbar.scrolled .navbar-nav>li>a,
 .site-navbar.scrolled .navbar-brand,
 .site-navbar.scrolled .language-toggle .btn,
 .site-navbar.scrolled .language-toggle .btn span,
 .site-navbar.scrolled .theme-toggle .btn,
 .site-navbar.scrolled .theme-toggle .btn span,
 /* static-nav: for non-home pages, unaffected by jQuery scroll handler */
-.site-navbar.static-nav .navbar-nav > li > a,
+.site-navbar.static-nav .navbar-nav>li>a,
 .site-navbar.static-nav .navbar-brand,
 .site-navbar.static-nav .language-toggle .btn,
 .site-navbar.static-nav .language-toggle .btn span,
@@ -86,27 +96,27 @@ mat-divider {
 }
 
 /* Ensure Hero Text is always white */
-.site-hero h1, 
-.site-hero p, 
-.site-hero span, 
+.site-hero h1,
+.site-hero p,
+.site-hero span,
 .site-hero strong {
   color: #ffffff !important;
 }
 
 
-.resume-item .text-light, 
+.resume-item .text-light,
 .site-service-item p,
 .section-heading p,
 .resume-item .school,
 .resume-item .date,
-.site-contact-details li > span,
+.site-contact-details li>span,
 .text-uppercase:not(.site-hero *) {
   color: var(--text-muted) !important;
 }
 
 /* Force main text color for important labels and hardcoded white classes outside hero */
 .text-uppercase:not(.site-hero *),
-.site-contact-details li > span,
+.site-contact-details li>span,
 .text-white:not(.site-hero *),
 .text-light:not(.site-hero *) {
   color: var(--text-main) !important;
@@ -119,23 +129,30 @@ mat-divider {
 }
 
 /* Targeted placeholder fix for any input/textarea that can have a placeholder */
-input, textarea, .form-control, .mat-input-element {
+input,
+textarea,
+.form-control,
+.mat-input-element {
   &::placeholder {
     color: var(--placeholder-color) !important;
     opacity: 1 !important;
   }
+
   &::-webkit-input-placeholder {
     color: var(--placeholder-color) !important;
     opacity: 1 !important;
   }
+
   &::-moz-placeholder {
     color: var(--placeholder-color) !important;
     opacity: 1 !important;
   }
+
   &:-ms-input-placeholder {
     color: var(--placeholder-color) !important;
     opacity: 1 !important;
   }
+
   &:-moz-placeholder {
     color: var(--placeholder-color) !important;
     opacity: 1 !important;
@@ -144,8 +161,8 @@ input, textarea, .form-control, .mat-input-element {
 
 /* Fix for browser autofill background and text colors */
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
 input:-webkit-autofill:active,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
@@ -273,7 +290,8 @@ img.hero-img {
   max-width: 100% !important;
   aspect-ratio: 1 / 1 !important;
   object-fit: cover !important;
-  border-radius: 12px !important; /* Like the other cards */
+  border-radius: 12px !important;
+  /* Like the other cards */
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -285,8 +303,9 @@ img.hero-img {
   flex-wrap: wrap !important;
 }
 
-.pt-5, .py-5 {
-    padding-top: 14rem !important;
+.pt-5,
+.py-5 {
+  padding-top: 14rem !important;
 }
 
 /* Hero Video Background Styles - Forced Visibility */
@@ -371,22 +390,25 @@ img.hero-img {
 
 /* Angular Material SnackBar Custom Styles - Faithful to the Design */
 .snackbar-success {
-  background-color: #bac964 !important; /* The main green/yellow color from the theme */
-  color: #222 !important; /* Dark text for contrast */
+  background-color: #bac964 !important;
+  /* The main green/yellow color from the theme */
+  color: #222 !important;
+  /* Dark text for contrast */
   font-weight: 500;
   border-radius: 4px;
 }
 
 .snackbar-error {
-  background-color: #d9534f !important; /* Standard but refined error red */
+  background-color: #d9534f !important;
+  /* Standard but refined error red */
   color: white !important;
   font-weight: 500;
   border-radius: 4px;
 }
 
 /* Unified Card Styles */
-.resume-item, 
-.site-service-item, 
+.resume-item,
+.site-service-item,
 .blog-entry,
 .single-portfolio,
 img.img-fluid {
@@ -395,15 +417,18 @@ img.img-fluid {
 
 /* Style the action button in the toast */
 .mat-simple-snackbar-action {
-  color: inherit !important; /* Inherit parent color for the button */
-  font-weight: 800 !important; /* Make it more prominent */
+  color: inherit !important;
+  /* Inherit parent color for the button */
+  font-weight: 800 !important;
+  /* Make it more prominent */
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
 
 .mat-simple-snackbar-action button {
   color: inherit !important;
-  background: white !important; /* White button in snackbar */
+  background: white !important;
+  /* White button in snackbar */
   padding: 0 10px !important;
   margin-left: 10px !important;
   border-radius: 4px !important;
@@ -411,13 +436,13 @@ img.img-fluid {
 }
 
 .snackbar-success .mat-simple-snackbar-action button {
-    background: #222 !important;
-    color: #bac964 !important;
+  background: #222 !important;
+  color: #bac964 !important;
 }
 
 .snackbar-error .mat-simple-snackbar-action button {
-    background: white !important;
-    color: #d9534f !important;
+  background: white !important;
+  color: #d9534f !important;
 }
 
 /* Ensure the SnackBar text is centered and looks modern */
@@ -450,6 +475,7 @@ img.img-fluid {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -457,18 +483,33 @@ img.img-fluid {
 }
 
 /* Customize other side animations for consistency */
-.fadeInLeft, .fadeInRight {
+.fadeInLeft,
+.fadeInRight {
   animation-duration: 1.2s !important;
   animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 @media (max-width: 768px) {
-  .text-left { text-align: center !important; }
-  .intro-text .site-heading { font-size: 2.5rem; }
-  .hero-stat { margin-bottom: 20px; }
-  .d-flex { justify-content: center !important; }
-  .hero-image-container { margin-top: 50px; }
-  
+  .text-left {
+    text-align: center !important;
+  }
+
+  .intro-text .site-heading {
+    font-size: 2.5rem;
+  }
+
+  .hero-stat {
+    margin-bottom: 20px;
+  }
+
+  .d-flex {
+    justify-content: center !important;
+  }
+
+  .hero-image-container {
+    margin-top: 50px;
+  }
+
   /* Mobile Full-Width Buttons */
   .hero-cta-wrapper {
     flex-direction: column !important;
@@ -476,14 +517,15 @@ img.img-fluid {
     width: 100% !important;
     padding: 0 15px;
   }
-  
+
   .hero-cta-wrapper .hero-btn {
     width: 100% !important;
     margin-right: 0 !important;
     text-align: center;
   }
 
-  .pt-5, .py-5 {
+  .pt-5,
+  .py-5 {
     padding-top: 10rem !important;
   }
 
@@ -509,7 +551,8 @@ img.img-fluid {
       border-bottom: none;
     }
 
-    &:hover, &.active {
+    &:hover,
+    &.active {
       color: #bac964 !important;
       background: rgba(186, 201, 100, 0.08);
       border-radius: 8px;
@@ -533,7 +576,7 @@ img.img-fluid {
   color: var(--text-main) !important;
   border: 1px solid var(--card-border) !important;
   transition: all 0.3s ease;
-  
+
   &:hover {
     background: #bac964 !important;
     color: #222 !important;
