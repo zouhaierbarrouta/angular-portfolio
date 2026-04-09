@@ -583,3 +583,108 @@ img.img-fluid {
     transform: translateY(-3px);
   }
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                RTL SUPPORT ARABIC                          */
+/* -------------------------------------------------------------------------- */
+
+[dir="rtl"] {
+  text-align: right !important;
+
+  .ml-auto {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .mr-auto {
+    margin-right: 0 !important;
+    margin-left: auto !important;
+  }
+
+  .ml-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+  .ml-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+  .ml-3 { margin-right: 1rem !important; margin-left: 0 !important; }
+  .ml-4 { margin-right: 1.5rem !important; margin-left: 0 !important; }
+  .ml-5 { margin-right: 3rem !important; margin-left: 0 !important; }
+
+  .mr-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+  .mr-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+  .mr-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+  .mr-4 { margin-left: 1.5rem !important; margin-right: 0 !important; }
+  .mr-5 { margin-left: 3rem !important; margin-right: 0 !important; }
+
+  .text-left { text-align: right !important; }
+  .text-right { text-align: left !important; }
+
+  /* Navbar Adjustments */
+  .site-navbar .navbar-nav {
+    padding-right: 0;
+    margin-right: auto !important;
+    margin-left: 0 !important;
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: 0 !important;
+    margin-right: 10px !important;
+  }
+
+  .nav-ctrl-btn {
+    margin-left: 10px !important;
+    margin-right: 0 !important;
+  }
+
+  /* Lists */
+
+  .site-footer .list-unstyled {
+    padding-right: 0;
+  }
+
+  /* Contact details */
+  .site-contact-details li span {
+    margin-right: 0 !important;
+    margin-left: 10px !important;
+  }
+
+  /* Cards Text Alignment */
+  .card, .mat-card, 
+  .mat-card-header, .mat-card-header-text, .mat-card-content, 
+  .mat-card-title, .mat-card-subtitle, 
+  .card-body, .card-title, .card-text,
+  .mat-dialog-title, .mat-dialog-content,
+  .resume-item, .resume-item h3, .resume-item p, .resume-item .date, .resume-item .school {
+    text-align: right !important;
+    direction: rtl !important;
+    float: none !important;
+  }
+
+  /* RTL Padding Reversals (About/Contact Layouts) */
+  @media (min-width: 992px) {
+    .pl-lg-5 { padding-right: 3rem !important; padding-left: 0 !important; }
+    .pr-lg-5 { padding-left: 3rem !important; padding-right: 0 !important; }
+  }
+  @media (min-width: 768px) {
+    .pl-md-5 { padding-right: 3rem !important; padding-left: 0 !important; }
+    .pr-md-5 { padding-left: 3rem !important; padding-right: 0 !important; }
+  }
+  
+  /* Force Right Alignment on Core Typography */
+  .section-heading:not(.text-center), .lead, p:not(.text-center), .site-contact-details, .site-contact-details li, 
+  .site-form h3, #section-about h2, #section-about h3, #section-contact h2, #section-contact h3,
+  .site-section h2, .site-section h3 {
+    text-align: right !important;
+    direction: rtl !important;
+  }
+
+  /* Calendar Icon Spacing Fix (RTL BIDI) */
+  .icon-calendar {
+    margin-left: 8px !important;
+    margin-right: 0 !important;
+    display: inline-block;
+  }
+
+  /* Keep Footer Centered & LTR */
+  .site-footer, .site-footer p {
+    text-align: center !important;
+    direction: ltr !important;
+  }
+}

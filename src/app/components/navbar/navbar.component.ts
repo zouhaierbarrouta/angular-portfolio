@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  currentLanguage: 'en' | 'fr' = 'en';
+  currentLanguage: 'en' | 'fr' | 'ar' = 'en';
 
   constructor(
     public themeService: ThemeService,
@@ -19,16 +19,28 @@ export class NavbarComponent implements OnInit {
     public authService: AuthService,
     private router: Router
   ) { 
-    this.currentLanguage = (localStorage.getItem('language') as 'en' | 'fr') || 'en';
+    this.currentLanguage = (localStorage.getItem('language') as 'en' | 'fr' | 'ar') || 'en';
+    this.applyRtl(this.currentLanguage);
   }
 
   ngOnInit(): void {
   }
 
-  changeLanguage(lang: 'en' | 'fr') {
+  changeLanguage(lang: 'en' | 'fr' | 'ar') {
     this.currentLanguage = lang;
     if ((window as any).applyLanguage) {
       (window as any).applyLanguage(lang);
+    }
+    this.applyRtl(lang);
+  }
+
+  private applyRtl(lang: string) {
+    if (lang === 'ar') {
+      document.documentElement.dir = 'rtl';
+      document.body.classList.add('rtl-mode');
+    } else {
+      document.documentElement.dir = 'ltr';
+      document.body.classList.remove('rtl-mode');
     }
   }
 

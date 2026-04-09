@@ -48,6 +48,11 @@ export class StatisticsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.viewReady = true;
+    setTimeout(() => {
+      if ((window as any).applyLanguage) {
+        (window as any).applyLanguage(localStorage.getItem('language') || 'en');
+      }
+    }, 50);
     if (this.dataReady) {
       setTimeout(() => this.initChart(), 100);
     }

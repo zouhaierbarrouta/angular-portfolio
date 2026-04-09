@@ -15,7 +15,8 @@
                     <div class="p-3" (click)="$event.stopPropagation()">
                         <mat-radio-group [(ngModel)]="currentLanguage" (change)="changeLanguage($event.value)" class="d-flex flex-column">
                             <mat-radio-button value="en" class="mb-2">English (EN)</mat-radio-button>
-                            <mat-radio-button value="fr">Français (FR)</mat-radio-button>
+                            <mat-radio-button value="fr" class="mb-2">Français (FR)</mat-radio-button>
+                            <mat-radio-button value="ar" class="mb-2">العربية (AR)</mat-radio-button>
                         </mat-radio-group>
                     </div>
                 </mat-menu>

@@ -2,14 +2,14 @@
   <div class="container py-4">
     <header class="dashboard-header d-flex flex-column flex-md-row justify-content-between align-items-md-center">
       <div class="header-left">
-        <h1 class="text-white">Admin <strong>Statistics</strong></h1>
+        <h1 class="text-white" data-i18n="statistics.title">Admin Statistics</h1>
         <div class="badge-info mb-3 mb-md-0 d-inline-block">
-          <i class="icon-user-check"></i> Connected as barroua.zouhaier@gmail.com
+          <i class="icon-user-check"></i> <span data-i18n="statistics.connectedAs">Connected as</span> barroua.zouhaier@gmail.com
         </div>
       </div>
       <div class="header-right">
         <button mat-button class="btn-logout" (click)="onLogout()">
-          <mat-icon class="mr-2">logout</mat-icon> Sign Out
+          <mat-icon class="mr-2">logout</mat-icon> <span data-i18n="statistics.signOut">Sign Out</span>
         </button>
       </div>
     </header>
@@ -19,8 +19,8 @@
       <div class="col-md-3 mb-4">
         <mat-card class="summary-card">
           <mat-card-header>
-            <mat-card-title>Total Visits</mat-card-title>
-            <mat-card-subtitle>Past Week</mat-card-subtitle>
+            <mat-card-title data-i18n="statistics.totalVisits">Total Visits</mat-card-title>
+            <mat-card-subtitle data-i18n="statistics.pastWeek">Past Week</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <div class="stat-value">1,480</div>
@@ -32,8 +32,8 @@
       <div class="col-md-3 mb-4">
         <mat-card class="summary-card">
           <mat-card-header>
-            <mat-card-title>Unique Visitors</mat-card-title>
-            <mat-card-subtitle>Active Sessions</mat-card-subtitle>
+            <mat-card-title data-i18n="statistics.uniqueVisitors">Unique Visitors</mat-card-title>
+            <mat-card-subtitle data-i18n="statistics.activeSessions">Active Sessions</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <div class="stat-value">950</div>
@@ -45,8 +45,8 @@
       <div class="col-md-3 mb-4">
         <mat-card class="summary-card">
           <mat-card-header>
-            <mat-card-title>Avg. Duration</mat-card-title>
-            <mat-card-subtitle>Stickiness</mat-card-subtitle>
+            <mat-card-title data-i18n="statistics.avgDuration">Avg. Duration</mat-card-title>
+            <mat-card-subtitle data-i18n="statistics.stickiness">Stickiness</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <div class="stat-value">2m 45s</div>
@@ -58,8 +58,8 @@
       <div class="col-md-3 mb-4">
         <mat-card class="summary-card">
           <mat-card-header>
-            <mat-card-title>Bounce Rate</mat-card-title>
-            <mat-card-subtitle>Engagement</mat-card-subtitle>
+            <mat-card-title data-i18n="statistics.bounceRate">Bounce Rate</mat-card-title>
+            <mat-card-subtitle data-i18n="statistics.engagement">Engagement</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
             <div class="stat-value">38.5%</div>
@@ -74,7 +74,7 @@
       <div class="col-lg-8 mb-4">
         <mat-card class="main-dashboard-card h-100">
           <mat-card-header>
-            <mat-card-title>Traffic Trends</mat-card-title>
+            <mat-card-title data-i18n="statistics.trafficTrends">Traffic Trends</mat-card-title>
           </mat-card-header>
           <mat-card-content class="pt-4">
             <div class="chart-container-inner">
@@ -88,7 +88,7 @@
       <div class="col-lg-4 mb-4">
         <mat-card class="main-dashboard-card h-100">
           <mat-card-header>
-            <mat-card-title>Top Performance</mat-card-title>
+            <mat-card-title data-i18n="statistics.topPerformance">Top Performance</mat-card-title>
           </mat-card-header>
           <mat-card-content>
             <ul class="page-list list-unstyled">
@@ -108,16 +108,16 @@
         <mat-card class="ga-instruction-card">
           <mat-card-header>
             <mat-card-title>
-              <mat-icon class="mr-2">sync_problem</mat-icon> Connection Guide
+              <mat-icon class="mr-2">sync_problem</mat-icon> <span data-i18n="statistics.connectionGuide">Connection Guide</span>
             </mat-card-title>
           </mat-card-header>
           <mat-card-content>
-            <p>The dashboard currently displays static mock data. To link your live <strong>barroua.zouhaier@gmail.com</strong> Google Analytics account:</p>
+            <p><span data-i18n="statistics.mockDataText">The dashboard currently displays static mock data. To link your live</span> <strong>barroua.zouhaier@gmail.com</strong> <span data-i18n="statistics.mockDataText2">Google Analytics account:</span></p>
             <ol class="mt-3">
-              <li>Open <strong>Google Cloud Console</strong> and enable the <strong>Google Analytics Data API</strong>.</li>
-              <li>Create a <strong>Service Account</strong> email and download the credentials JSON.</li>
-              <li>Add this Service Account email as a user with <strong>Viewer</strong> access in your Google Analytics Admin panel.</li>
-              <li>Integrate the <code>google-analytics-data</code> library to authorize and fetch real-time reports.</li>
+              <li data-i18n="statistics.step1">Open Google Cloud Console and enable the Google Analytics Data API.</li>
+              <li data-i18n="statistics.step2">Create a Service Account email and download the credentials JSON.</li>
+              <li data-i18n="statistics.step3">Add this Service Account email as a user with Viewer access in your Google Analytics Admin panel.</li>
+              <li data-i18n="statistics.step4">Integrate the google-analytics-data library to authorize and fetch real-time reports.</li>
             </ol>
           </mat-card-content>
         </mat-card>

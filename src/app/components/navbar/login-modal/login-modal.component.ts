@@ -19,6 +19,11 @@ export class LoginModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      if ((window as any).applyLanguage) {
+        (window as any).applyLanguage(localStorage.getItem('language') || 'en');
+      }
+    }, 50);
   }
 
   onNoClick(): void {

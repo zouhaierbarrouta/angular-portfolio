@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PROJECTS_DATA, ProjectShowcase } from '../experience/experience.component';
 
@@ -17,5 +17,14 @@ export class ExperienceDetailsComponent implements OnInit {
     if (id) {
       this.project = PROJECTS_DATA.find(p => p.id === id);
     }
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      if (typeof (window as any).applyLanguage === 'function') {
+        const lang = localStorage.getItem('language') || 'en';
+        (window as any).applyLanguage(lang);
+      }
+    }, 100);
   }
 }

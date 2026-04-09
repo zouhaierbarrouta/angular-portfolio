@@ -17,6 +17,14 @@ export class AppComponent implements OnInit {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
+      // Apply translations instantly to newly loaded components
+      setTimeout(() => {
+        if (typeof (window as any).applyLanguage === 'function') {
+          const lang = localStorage.getItem('language') || 'en';
+          (window as any).applyLanguage(lang);
+        }
+      }, 50);
+
       // Re-trigger animations after a small delay to ensure DOM is ready
       setTimeout(() => {
         if ((window as any).refreshAnimations) {
