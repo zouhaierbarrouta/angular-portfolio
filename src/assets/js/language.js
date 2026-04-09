@@ -5,7 +5,7 @@ let translations = {};
 // Load translations from JSON file
 async function loadTranslations() {
     try {
-        const response = await fetch('assets/translations.json');
+        const response = await fetch('assets/translations.json?v=' + new Date().getTime());
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -56,7 +56,7 @@ function loadInlineTranslations() {
 }
 
 // Unified function to get translation by key path
-function getTranslation(key, lang) {
+window.getTranslation = function getTranslation(key, lang) {
     if (!translations[lang]) {
         console.error('Language not available:', lang);
         return null;
@@ -125,6 +125,9 @@ function applyLanguage(lang) {
     localStorage.setItem('language', lang);
     document.documentElement.lang = lang;
     
+    // Broadcast robust language change event to Angular
+    window.dispatchEvent(new CustomEvent('languageChanged', { detail: lang }));
+    
     // Apply translations to all elements with data-i18n
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
@@ -137,6 +140,8 @@ function applyLanguage(lang) {
         const translation = getTranslation(key, lang);
         if (translation) {
             element.placeholder = translation;
+            // Force compliance with Angular Material
+            element.setAttribute('data-placeholder', translation);
         }
     });
     

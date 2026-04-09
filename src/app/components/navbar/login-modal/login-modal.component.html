@@ -1,24 +1,28 @@
-<h2 mat-dialog-title data-i18n="login.title">Admin Access</h2>
+<h2 mat-dialog-title>{{ t('login.title', 'Admin Access') }}</h2>
 <mat-dialog-content class="pb-4">
   <form (ngSubmit)="onLogin()" #loginForm="ngForm">
     <div class="row w-100 mx-0 mt-3">
       <div class="col-12 px-0">
-        <mat-form-field appearance="fill">
-          <mat-label data-i18n="login.username">Username</mat-label>
-          <mat-icon matPrefix>account_circle</mat-icon>
-          <input matInput [(ngModel)]="username" name="username" required autocomplete="username" placeholder="Enter admin username" data-i18n-placeholder="login.usernamePlaceholder">
-        </mat-form-field>
+        <div class="form-group mb-4">
+          <label class="text-muted small text-uppercase mb-2 d-block" style="letter-spacing: 0.1rem;">{{ t('login.username', 'Username') }}</label>
+          <div class="input-with-icon">
+            <i class="icon-user"></i>
+            <input type="text" class="form-control" [(ngModel)]="username" name="username" required autocomplete="username" [placeholder]="t('login.usernamePlaceholder', 'Enter admin username')">
+          </div>
+        </div>
       </div>
       
       <div class="col-12 px-0">
-        <mat-form-field appearance="fill">
-          <mat-label data-i18n="login.password">Password</mat-label>
-          <mat-icon matPrefix>lock</mat-icon>
-          <input matInput [(ngModel)]="password" name="password" [type]="hidePassword ? 'password' : 'text'" required autocomplete="current-password" placeholder="Enter security key" data-i18n-placeholder="login.passwordPlaceholder">
-          <button type="button" mat-icon-button matSuffix (click)="togglePasswordVisibility()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
-            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-        </mat-form-field>
+        <div class="form-group mb-4">
+          <label class="text-muted small text-uppercase mb-2 d-block" style="letter-spacing: 0.1rem;">{{ t('login.password', 'Password') }}</label>
+          <div class="input-with-icon">
+            <i class="icon-lock"></i>
+            <input [type]="hidePassword ? 'password' : 'text'" class="form-control" [(ngModel)]="password" name="password" required autocomplete="current-password" [placeholder]="t('login.passwordPlaceholder', 'Enter security key')">
+            <button type="button" class="btn-toggle-pass" (click)="togglePasswordVisibility()">
+              <i [className]="hidePassword ? 'icon-eye' : 'icon-eye-blocked'"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -26,13 +30,13 @@
       <mat-icon class="align-middle mr-1" style="font-size: 18px;">warning</mat-icon> {{ error }}
     </div>
     
-    <mat-dialog-actions class="modal-actions px-0">
-      <button mat-button type="button" (click)="onNoClick()" class="btn-cancel">
-        <span data-i18n="login.cancel">Cancel</span>
+    <div class="modal-actions mt-4">
+      <button type="button" (click)="onNoClick()" class="btn btn-outline-primary btn-cancel">
+        {{ t('login.cancel', 'Cancel') }}
       </button>
-      <button mat-flat-button color="primary" type="submit" class="btn-login ml-auto">
-        <span data-i18n="login.unlock">Unlock Dashboard</span>
+      <button type="submit" class="btn btn-primary btn-login">
+        {{ t('login.unlock', 'Unlock Dashboard') }}
       </button>
-    </mat-dialog-actions>
+    </div>
   </form>
 </mat-dialog-content>

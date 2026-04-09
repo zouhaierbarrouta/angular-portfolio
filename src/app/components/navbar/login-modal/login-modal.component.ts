@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from '../../../services/auth.service';
 
@@ -18,12 +18,22 @@ export class LoginModalComponent implements OnInit {
     private authService: AuthService
   ) { }
 
+  currentLang = 'en';
+
   ngOnInit(): void {
-    setTimeout(() => {
-      if ((window as any).applyLanguage) {
-        (window as any).applyLanguage(localStorage.getItem('language') || 'en');
-      }
-    }, 50);
+    this.currentLang = localStorage.getItem('language') || 'en';
+  }
+
+  @HostListener('window:languageChanged', ['$event'])
+  onLanguageChanged(event: CustomEvent) {
+    this.currentLang = event.detail;
+  }
+
+  t(key: string, fallback: string): string {
+    if (typeof (window as any).getTranslation === 'function') {
+      return (window as any).getTranslation(key, this.currentLang) || fallback;
+    }
+    return fallback;
   }
 
   onNoClick(): void {
