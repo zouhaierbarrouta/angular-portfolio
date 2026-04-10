@@ -688,3 +688,58 @@ img.img-fluid {
     direction: ltr !important;
   }
 }
+
+/* Mobile Centering Fix for All Languages */
+@media (max-width: 767.98px) {
+  .section-heading, .section-heading h2, .section-heading h2 span, .lead,
+  #section-about, #section-about .section-heading, #section-about .lead, #section-about p {
+    text-align: center !important;
+    display: block !important;
+    width: 100%;
+  }
+
+  [dir="rtl"] {
+    .site-service-item, .site-service-item h3, .site-service-item p,
+    .resume-item h3, .resume-item p, h2[data-i18n*="certifications"], #section-experience h2 {
+      text-align: center !important;
+      display: block !important;
+      width: 100%;
+    }
+
+    #section-home {
+      .intro-text, .intro-text .col-md-7, .intro-text .col-md-5,
+      .site-heading, .hero-sub-title, .hero-stat {
+        text-align: center !important;
+      }
+      
+      .hero-cta-wrapper {
+        justify-content: center !important;
+        flex-direction: column;
+        align-items: center;
+        
+        .btn {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+      
+      .hero-social-grid {
+        justify-content: center !important;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      
+      .hero-image-container {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        
+        .hero-img {
+          max-width: 250px;
+        }
+      }
+    }
+  }
+}
+
+
