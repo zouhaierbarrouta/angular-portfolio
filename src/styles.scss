@@ -657,6 +657,14 @@ img.img-fluid {
     float: none !important;
   }
 
+  /* Skill Cards special centering (Global) */
+  .site-service-item, .site-service-item h3, .site-service-item p {
+    text-align: center !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   /* RTL Padding Reversals (About/Contact Layouts) */
   @media (min-width: 992px) {
     .pl-lg-5 { padding-right: 3rem !important; padding-left: 0 !important; }
@@ -667,11 +675,12 @@ img.img-fluid {
     .pr-md-5 { padding-left: 3rem !important; padding-right: 0 !important; }
   }
   
-  /* Force Right Alignment on Core Typography */
+  /* Force Right Alignment on Core Typography (Web) */
   .section-heading:not(.text-center), .lead, p:not(.text-center), .site-contact-details, .site-contact-details li, 
   .site-form h3, #section-about h2, #section-about h3, #section-contact h2, #section-contact h3,
   .site-section h2, .site-section h3 {
     text-align: right !important;
+    /* justify-items: center; */
     direction: rtl !important;
   }
 
@@ -680,6 +689,20 @@ img.img-fluid {
     margin-left: 8px !important;
     margin-right: 0 !important;
     display: inline-block;
+  }
+
+  .hero-stat {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    .stat-number, .stat-label {
+      text-align: center !important;
+      display: block !important;
+      width: 100%;
+    }
   }
 
   /* Keep Footer Centered & LTR */
@@ -699,27 +722,57 @@ img.img-fluid {
   }
 
   [dir="rtl"] {
-    .site-service-item, .site-service-item h3, .site-service-item p,
-    .resume-item h3, .resume-item p, h2[data-i18n*="certifications"], #section-experience h2 {
+    .site-service-item, .site-service-item h3, .site-service-item p {
       text-align: center !important;
+      display: block !important;
+      width: 100%;
+    }
+
+    h2[data-i18n*="certifications"], #section-experience h2 {
+      text-align: center !important;
+      display: block !important;
+      width: 100%;
+    }
+
+    .resume-item h3, .resume-item p {
+      /* text-align: center !important; */
       display: block !important;
       width: 100%;
     }
 
     #section-home {
       .intro-text, .intro-text .col-md-7, .intro-text .col-md-5,
-      .site-heading, .hero-sub-title, .hero-stat {
+      .site-heading, .hero-sub-title {
         text-align: center !important;
+      }
+
+      .hero-stat {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        
+        .stat-number {
+           display: block !important;
+           margin-bottom: 5px !important;
+        }
+        .stat-label {
+           display: block !important;
+           margin-top: 0 !important;
+        }
       }
       
       .hero-cta-wrapper {
         justify-content: center !important;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 40px !important;
         
         .btn {
           width: 100%;
           max-width: 300px;
+          margin-bottom: 10px;
         }
       }
       

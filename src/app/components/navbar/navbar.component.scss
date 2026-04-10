@@ -82,14 +82,15 @@
     opacity: 0.9;
   }
 
-  .nav-ctrl-btn:hover .nav-icon-img {
+  &:hover .nav-icon-img {
     filter: brightness(0) saturate(100%) invert(84%) sepia(16%) saturate(1072%) hue-rotate(24deg) brightness(89%) contrast(91%) !important;
     opacity: 1;
     transform: scale(1.1);
   }
 
-  &:hover .nav-icon-img {
-    transform: rotate(45deg); // Specific for settings icon which shares this class
+  // Rotate settings icon on hover - more specific match
+  &.nav-ctrl-btn:hover .nav-icon-img[src*="settings"] {
+     transform: rotate(45deg) scale(1.1);
   }
 }
 
@@ -131,6 +132,11 @@
     &:hover {
       background: #f8f9fa !important;
       transform: translateY(-1px);
+    }
+
+    [dir="rtl"] & {
+      margin-left: 0 !important;
+      margin-right: 10px !important;
     }
   }
 }
@@ -193,3 +199,39 @@
     }
   }
 }
+
+// ---- Mobile RTL Overrides ----
+@media (max-width: 991px) {
+  [dir="rtl"] {
+    .container {
+      direction: rtl !important;
+      text-align: right !important;
+    }
+
+    .ml-auto {
+      margin-left: 0 !important;
+      margin-right: auto !important;
+    }
+
+    .navbar-collapse {
+      direction: rtl !important;
+      text-align: right !important;
+      width: 100%;
+    }
+
+    .navbar-nav {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+      text-align: right !important;
+      margin-top: 15px;
+      direction: rtl !important;
+    }
+
+    .nav-link {
+      text-align: right !important;
+      padding-right: 0 !important;
+      display: block !important;
+      width: 100%;
+    }
+  }
+}
