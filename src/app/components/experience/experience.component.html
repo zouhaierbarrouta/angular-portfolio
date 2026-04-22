@@ -16,13 +16,16 @@
                         <span [attr.data-i18n]="'experience.projects.' + project.id + '.date'">{{ project.date }}</span>
                     </span>
                     <h3 class="mb-3 text-white" [attr.data-i18n]="'experience.projects.' + project.id + '.title'">{{ project.title }}</h3>
-                    <p class="text-light">
+                    <p class="text-light mb-4">
                         <span [attr.data-i18n]="'experience.projects.' + project.id + '.description'">{{ project.description }}</span>
                         <a [routerLink]="['/experience-details', project.id]" *ngIf="project.images && project.images.length > 5" class="text-primary ml-1" style="text-decoration: underline; cursor: pointer;" data-i18n="experience.moreDetails">
                             more details
                         </a>
                     </p>
-                    <span class="school font-weight-bold text-white mt-3 d-block" [attr.data-i18n]="'experience.projects.' + project.id + '.company'">{{ project.company }}</span>
+                    <div class="tech-tags d-flex flex-wrap mb-4">
+                        <span *ngFor="let tech of project.technologies" class="tech-tag">{{ tech }}</span>
+                    </div>
+                    <span class="school font-weight-bold text-white d-block" [attr.data-i18n]="'experience.projects.' + project.id + '.company'">{{ project.company }}</span>
                 </div>
             </div>
             

@@ -1,6 +1,6 @@
 <div class="work-slider-container w-100 position-relative" *ngIf="images.length > 0; else noImages">
   <div class="work-slider">
-    <div class="slide" *ngFor="let image of slideImages; let i = index" [class.active]="i === currentIndex">
+    <div class="slide" *ngFor="let image of slideImages; let i = index" [ngClass]="getSlideClass(i)">
       <img [src]="image.url" [alt]="image.title">
     </div>
   </div>

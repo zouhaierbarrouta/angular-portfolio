@@ -16,6 +16,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   @Input() maxScreensToShow: number = 5;
 
   currentIndex: number = 0;
+  previousIndex: number = -1;
   slideInterval: any;
   showAll: boolean = false;
 
@@ -56,19 +57,34 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
 
   nextSlide() {
     if (this.slideImages.length > 0) {
+      this.previousIndex = this.currentIndex;
       this.currentIndex = (this.currentIndex + 1) % this.slideImages.length;
     }
   }
 
   prevSlide() {
     if (this.slideImages.length > 0) {
+      this.previousIndex = this.currentIndex;
       this.currentIndex = (this.currentIndex - 1 + this.slideImages.length) % this.slideImages.length;
     }
   }
 
   setSlide(index: number) {
-    this.currentIndex = index;
-    this.startAutoSlide();
+    if (this.currentIndex !== index) {
+      this.previousIndex = this.currentIndex;
+      this.currentIndex = index;
+      this.startAutoSlide();
+    }
+  }
+
+  getSlideClass(index: number): string {
+    if (index === this.currentIndex) {
+      return 'active';
+    }
+    if (index === this.previousIndex) {
+      return 'outgoing';
+    }
+    return '';
   }
 
   toggleShowAll(event: Event) {

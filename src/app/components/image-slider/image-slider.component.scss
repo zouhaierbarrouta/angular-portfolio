@@ -1,18 +1,18 @@
 .work-slider-container {
     position: relative;
-    max-width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
     background: #000;
-    height: 100%;
+    height: 100%; // Fill the d-flex container
 }
 
 .work-slider {
     position: relative;
     height: 100%;
-    min-height: 300px;
+    min-height: 350px; // Unified height
 }
 
 .slide {
@@ -21,47 +21,38 @@
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out, transform 1.2s ease-out;
-    transform: scale(1.05);
     display: flex;
     align-items: center;
     justify-content: center;
+    pointer-events: none;
+    
+    // Default state: Waiting on the right (hidden)
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.8s ease-in-out;
+    z-index: 1;
 
     &.active {
         opacity: 1;
-        transform: scale(1);
+        transform: translateX(0);
+        z-index: 2;
+        pointer-events: auto;
+    }
+
+    &.outgoing {
+        opacity: 0;
+        transform: translateX(-100%);
         z-index: 1;
+        pointer-events: none;
     }
 
     img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-    }
-}
-
-.slide-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    padding: 40px 30px 40px;
-    color: white;
-    text-align: left;
-
-    h3 {
-        color: #b2c251;
-        margin-bottom: 5px;
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-
-    p {
-        font-size: 1rem;
-        margin: 0;
-        opacity: 0.9;
+        object-fit: contain; // Unified zoom-out to show entire screenshots
+        padding: 10px;
+        background-color: #1a1a1a; // Dark unified background
+        border-radius: 8px;
     }
 }
 
@@ -69,75 +60,64 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: transparent;
-    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: white;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-    font-size: 1.5rem;
-    transition: transform 0.3s;
     width: 50px;
     height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 15px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin: 0 20px;
 
     img {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         object-fit: contain;
-        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    &:focus {
-        outline: none;
-        box-shadow: none;
+        filter: brightness(0) invert(1);
     }
 
     &:hover {
-        background: transparent;
-        img {
-            transform: scale(1.3);
-        }
+        background: rgba(186, 201, 100, 0.8); // Theme color
+        transform: translateY(-50%) scale(1.1);
+        border-color: transparent;
     }
 
-    &.prev {
-        left: 0;
-    }
-
-    &.next {
-        right: 0;
-    }
+    &.prev { left: 0; }
+    &.next { right: 0; }
 }
 
 .slider-dots-container {
     position: absolute;
-    bottom: 15px;
+    bottom: 25px;
     left: 0;
     right: 0;
     z-index: 10;
-    text-align: center;
     
     .slider-dots {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 0 20px;
+        gap: 12px;
 
         span {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
+            transition: all 0.4s ease;
 
             &.active {
-                background: #b2c251;
-                transform: scale(1.2);
+                background: #bac964; // Theme color
+                width: 25px;
+                border-radius: 4px;
+                box-shadow: 0 0 10px rgba(186, 201, 100, 0.5);
             }
         }
     }
@@ -149,9 +129,8 @@
     }
 
     .slider-btn {
-        padding: 10px;
         width: 40px;
         height: 40px;
-        font-size: 1rem;
+        margin: 0 10px;
     }
 }

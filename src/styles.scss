@@ -159,6 +159,12 @@ textarea,
   }
 }
 
+.phone-number {
+  direction: ltr !important;
+  unicode-bidi: embed !important;
+  display: inline-block;
+}
+
 /* Fix for browser autofill background and text colors */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
