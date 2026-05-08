@@ -28,7 +28,9 @@
             "lead": "Full Stack Developer with over 5 years of experience",
             "description": "Expert in creating high-performance, responsive, and maintainable web applications. Passionate about designing intuitive user interfaces and seamless user experiences, with deep mastery of the Angular RxJS ecosystem and development best practices. My goal is to transform complex requirements into elegant, scalable, and high-quality interfaces.",
             "hireMe": "Hire Me",
-            "downloadCV": "Download CV"
+            "downloadCV": "Download CV",
+            "cvPath": "assets/Zouhaier_Barrouta_CV_EN.pdf",
+            "cvFileName": "cv EN.pdf"
         },
         "education": {
             "title": "My Education",
@@ -239,7 +241,9 @@
             "lead": "Développeur Full Stack avec plus de 5 ans d'expérience",
             "description": "Expert dans la création d'applications web performantes, réactives et maintenables. Passionné par la conception d'interfaces utilisateur intuitives et d'expériences fluides, avec une maîtrise approfondie de l'écosystème Angular RxJS et des bonnes pratiques de développement. Mon objectif est de transformer des exigences complexes en interfaces élégantes, scalables et de haute qualité.",
             "hireMe": "M'embaucher",
-            "downloadCV": "Télécharger CV"
+            "downloadCV": "Télécharger CV",
+            "cvPath": "assets/Zouhaier_Barrouta_CV_FR.pdf",
+            "cvFileName": "cv FR.pdf"
         },
         "education": {
             "title": "Ma Formation",
