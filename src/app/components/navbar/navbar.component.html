@@ -9,7 +9,7 @@
         <div class="d-flex align-items-center ml-auto">
             <div class="language-toggle">
                 <button [matMenuTriggerFor]="langMenu" class="nav-ctrl-btn">
-                    <img src="/assets/images/icons/language.svg" alt="Language" class="nav-icon-img">
+                    <img src="/assets/images/icons/shared/language.svg" alt="Language" class="nav-icon-img">
                 </button>
                 <mat-menu #langMenu="matMenu" class="custom-lang-menu">
                     <div class="p-3" (click)="$event.stopPropagation()">
@@ -24,7 +24,7 @@
 
             <div class="theme-toggle ml-2">
                 <button (click)="toggleTheme()" class="nav-ctrl-btn">
-                    <img [src]="themeService.getTheme() === 'dark' ? '/assets/images/icons/sun.svg' : '/assets/images/icons/moon.svg'" 
+                    <img [src]="themeService.getTheme() === 'dark' ? '/assets/images/icons/shared/sun.svg' : '/assets/images/icons/shared/moon.svg'" 
                          [alt]="themeService.getTheme() === 'dark' ? 'Light Mode' : 'Dark Mode'"
                          class="nav-icon-img">
                 </button>
@@ -32,7 +32,7 @@
 
             <div class="statistics-toggle ml-2">
                 <button (click)="onStatisticsClick($event)" class="nav-ctrl-btn">
-                    <img src="/assets/images/icons/settings.svg" alt="Settings" class="nav-icon-img">
+                    <img src="/assets/images/icons/shared/settings.svg" alt="Settings" class="nav-icon-img">
                 </button>
             </div>
 

@@ -14,6 +14,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
   projectsCount: number = 0;
   techCount: number = 0;
 
+  // Technologies for orbit animation
+  techIcons: string[] = [
+    'angular-svgrepo-com.svg',
+    'java-svgrepo-com.svg',
+    'js-svgrepo-com.svg',
+    'typescript-svgrepo-com.svg',
+    'postgresql-svgrepo-com.svg',
+    'dotnet-svgrepo-com.svg',
+    'graphql-svgrepo-com.svg',
+    'scss-svgrepo-com.svg',
+    'android-icon-svgrepo-com.svg',
+    'apache-svgrepo-com.svg',
+    'postman-icon-svgrepo-com.svg',
+    'light-json-svgrepo-com.svg',
+    'node-js-svgrepo-com.svg'
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

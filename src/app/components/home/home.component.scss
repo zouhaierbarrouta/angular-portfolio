@@ -1,0 +1,90 @@
+.hero-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    padding: 30px;
+}
+
+.orbit-container {
+    position: relative;
+    display: inline-block;
+    max-width: 320px;
+    
+    .hero-img {
+        z-index: 2;
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-radius: 15px; /* Use standard rounded corners instead of 50% circle */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 4px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+.orbit-icons {
+    position: absolute;
+    /* Extend the boundary outside the image: 10px space + 22px icon radius = 32px */
+    top: -32px;
+    left: -32px;
+    right: -32px;
+    bottom: -32px;
+    pointer-events: none;
+    z-index: 3;
+
+    .tech-icon {
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        margin-top: -22px; /* Center it precisely on the boundary */
+        margin-left: -22px;
+        
+        background: rgba(20, 20, 20, 0.7);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 8px;
+        border-radius: 50%; /* The icon itself remains a circle */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        object-fit: contain;
+        
+        /* The animation moves top/left along the rectangular perimeter */
+        animation: moveAroundRect 25s linear infinite;
+        /* Delay bases starting position on its index */
+        animation-delay: calc(-25s / var(--total) * var(--i));
+    }
+}
+
+/* 
+   Assuming a portrait aspect ratio (e.g. width is ~20% of perimeter, height is ~30%).
+   0 -> 22% (top edge)
+   22% -> 50% (right edge)
+   50% -> 72% (bottom edge)
+   72% -> 100% (left edge)
+   This keeps the speed uniform along a rectangular path.
+*/
+@keyframes moveAroundRect {
+    0%    { top: 0%;   left: 0%; }
+    22%   { top: 0%;   left: 100%; }
+    50%   { top: 100%; left: 100%; }
+    72%   { top: 100%; left: 0%; }
+    100%  { top: 0%;   left: 0%; }
+}
+
+@media (max-width: 768px) {
+    .orbit-container {
+        max-width: 250px;
+    }
+    
+    .orbit-icons {
+        /* 10px space + 18px icon radius = 28px */
+        top: -28px; left: -28px; right: -28px; bottom: -28px;
+    }
+    .orbit-icons .tech-icon {
+        width: 36px;
+        height: 36px;
+        margin-top: -18px;
+        margin-left: -18px;
+        padding: 6px;
+    }
+}

@@ -63,7 +63,17 @@
 
             <div class="col-md-5 site-animate" data-animate-effect="fadeInRight">
                 <div class="hero-image-container">
-                    <img src="assets/images/profile.png" alt="Zouhaier Barrouta" class="img-fluid hero-img">
+                    <div class="orbit-container">
+                        <img src="assets/images/profile.png" alt="Zouhaier Barrouta" class="img-fluid hero-img">
+                        <div class="orbit-icons">
+                            <img *ngFor="let icon of techIcons; let i = index"
+                                 [src]="'assets/images/icons/technologies/' + icon" 
+                                 alt="Tech Icon" 
+                                 class="tech-icon"
+                                 [style.--i]="i"
+                                 [style.--total]="techIcons.length">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
